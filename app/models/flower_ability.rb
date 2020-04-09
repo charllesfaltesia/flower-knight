@@ -1,0 +1,2 @@
+class FlowerAbility < ApplicationRecord
+end
