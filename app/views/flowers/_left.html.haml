@@ -1,0 +1,48 @@
+.left
+  .left_name
+    ー キャラ名で検索
+    %input.form{:placeholder => "ここにキャラ名を入力"}
+  .left_atr
+    ー 属性の絞込み
+    .left_atr_check
+    %input{:type => "checkbox", :value => "斬"}
+    斬
+    %input{:type => "checkbox", :value => "打"}
+    打
+    %input{:type => "checkbox", :value => "突"}
+    突
+    %input{:type => "checkbox", :value => "魔"}
+    魔
+  .left_ability
+    ー アビリティ検索
+    .left_ability_box
+      %input.in{:type => "checkbox", :value => "1"}>/
+      準備中
+
+
+
+
+    -# %select.sele
+    -#   %option{:value => "0"} 指定なし
+    -#   %option{:value => "1"} スキル発動1.2倍
+    -#   %option{:value => "2"} スキル発動1.36倍
+    -#   %option{:value => "3"} 1ターン目1.65倍
+    -#   %option{:value => "4"} 斬属性付与
+    -#   %option{:value => "5"} 打属性付与
+    -#   %option{:value => "6"} 突属性付与
+    -#   %option{:value => "7"} 魔属性付与
+    -#   %option{:value => "8"} ソーラー威力+70%
+    -#   %option{:value => "9"} 光ゲージ増加
+    -#   %option{:value => "10"} 攻撃力上昇
+    -#   %option{:value => "11"} 防御 軽減 耐久
+    -#   %option{:value => "12"} クリ発動率UP
+    -#   %option{:value => "13"} クリダメUP
+    -#   %option{:value => "14"} 与ダメ乗算バフ
+    -#   %option{:value => "15"} 移動力上昇
+    -#   %option{:value => "16"} 再行動
+    -#   %option{:value => "17"} 全体バリア
+    -#   %option{:value => "18"} 単体3回バリア
+    -#   %option{:value => "19"} 反撃(超反撃)
+    -#   %option{:value => "20"} 敵の攻撃力低下
+    -#   %option{:value => "21"} 敵のスキル発動率低下
+    -#   %option{:value => "22"} 敵が攻撃ミス

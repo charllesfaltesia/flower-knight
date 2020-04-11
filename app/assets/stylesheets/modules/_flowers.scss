@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+}
+
+// .li{
+//   display: inline;
+// }
+// .wrapper{
+//   position: relative;
+// }
+
+.header{
+  background-color: green;
+  position: fixed;
+  z-index: 1;
+  width:100%;
+  border-bottom: 1px solid black;
+  &_title{
+    height:  60px;
+    width :1050px;
+    background-color: #1075af;
+    line-height: 60px;
+    font-size: 32px;
+    padding-left: 20px;
+    margin: 0 auto;
+  }
+  &_menu{
+    height:  40px;
+    width :1050px;
+    background-color: #1d8bca;
+    padding-left: 20px;
+    margin: 0 auto;
+    line-height: 40px;
+    display: flex;
+    .menu{
+      text-decoration: none;
+      background-color: #2fa4e7;
+      color: black;
+      padding: 10px;
+      border: 1px solid;
+    }
+    
+  }
+}
+// -----------------------------------
+.contents{
+  display: flex;
+}
+// -----------------------------------
+.left{
+  font-size: 20px;
+  background-color: #bce3f9;
+  height: 100vh;
+  width : 250px;
+  padding: 120px 5px 20px 5px;
+  border-right: 1px solid black;
+  &_name{
+    margin-bottom: 15px;
+    .form{
+      display: block;
+      width :238px;
+      height: 35px;
+      border: 1px solid;
+      padding-left: 5px;
+    }
+  }
+  &_atr{
+    margin-bottom: 15px;
+  }
+  &_ability{
+    &_box{
+      height:16px;
+      .in{
+        padding-bottom: 3px;
+      }
+    }
+  }
+}
+// -----------------------------------
+.right{
+  width :100%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  padding:115px 15px 0 15px;
+  // background-color: blueviolet;
+  overflow: scroll;
+  &_column{
+    margin : 0 auto;
+    // background-color: red;
+    height:50px;
+    display: flex;
+    border: 1px solid black;
+    text-align: center;
+    width:688px;
+    margin-bottom: 5px;
+    &_nation{
+      width:23px;
+      border-right: 1px solid black;
+      background-color: #ffe0e0;
+    }
+    &_loc{
+      width:36px;
+      line-height: 50px;
+      border-right: 1px solid black;
+    }
+    &_atr{
+      width:36px;
+      line-height: 50px;
+      border-right: 1px solid black;
+    }
+    &_name{
+      width:210px;
+      line-height: 50px;
+      border-right: 1px solid black;
+      background-color: #ffe0e0;
+    }
+    &_skill{
+      width:100px;
+      line-height: 50px;
+      border-right: 1px solid black;
+      background-color: #ffe0e0;
+    }
+    &_abitype{
+      width:23px;
+      border-right: 1px solid black;
+    }
+    &_tar{
+      width:40px;
+      line-height: 50px;
+      border-right: 1px solid black;
+      background-color: #ffe0e0;
+    }
+    &_effect{
+      width:150px;
+      line-height: 50px;
+      border-right: 1px solid black;
+    }
+    &_ev{
+      width:70px;
+      line-height: 50px;
+      background-color: #fff8f8;
+    }
+  }
+  // -----------------------ここから花騎士
+  &_main{
+    margin : 0 auto;
+    // background-color: blue;
+    height:150px;
+    display: flex;
+    border: 1px solid black;
+    text-align: center;
+    width:688px;
+    margin-bottom: 2px;
+    &_nation{
+      width:23px;
+      border-right: 1px solid black;
+      line-height: 150px;
+      background-color: #fff8f8;
+    }
+    &_loc{
+      width:36px;
+      line-height: 150px;
+      border-right: 1px solid black;
+    }
+    &_atr{
+      width:36px;
+      line-height: 150px;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+    }
+    &_name{
+      width:210px;
+      margin: auto;
+      line-height: 148px;
+      background-color: #fff8f8;
+    }
+    &_skill{
+      width:100px;
+      line-height: 148px;
+      margin: auto;
+      background-color: #fff8f8;
+    }
+  }
+  .ability{
+    width:283px;
+    // background-color: yellow;
+    border-left: 1px solid black;
+    &-box{
+      display: flex;
+      &_1{
+        width : 23px;
+        height: 25px;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      &_2{
+        width : 40px;
+        height: 25px;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        background-color: #fff8f8;
+      }
+      &_3{
+        width : 150px;
+        height: 25px;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      &_4{
+        width : 70px;
+        height: 25px;
+        border-bottom: 1px solid black;
+        background-color: #fff8f8;
+      }
+    }
+  }
+}
+
+// -----------------------------------
