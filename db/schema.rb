@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_073341) do
     t.string "atr"
     t.string "nation"
     t.string "skill"
+    t.string "imple"
   end
 
   add_foreign_key "flower_abilities", "abilities"

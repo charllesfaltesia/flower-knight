@@ -9,6 +9,7 @@ class CreateFlowers < ActiveRecord::Migration[5.2]
       t.string :atr
       t.string :nation
       t.string :skill
+      t.string :imple
     end
   end
 end
