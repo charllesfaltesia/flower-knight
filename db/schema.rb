@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_073341) do
+ActiveRecord::Schema.define(version: 2020_04_13_084338) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.string "effect"
-    t.string "ev"
+    t.string "weight"
     t.string "tar"
   end
 
@@ -28,14 +28,12 @@ ActiveRecord::Schema.define(version: 2020_04_09_073341) do
 
   create_table "flowers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "hp"
-    t.integer "atk"
-    t.integer "de"
-    t.integer "loc"
-    t.string "atr"
+    t.integer "locomotion"
+    t.string "job"
     t.string "nation"
     t.string "skill"
-    t.string "imple"
+    t.integer "year"
+    t.index ["name"], name: "index_flowers_on_name", unique: true
   end
 
   add_foreign_key "flower_abilities", "abilities"

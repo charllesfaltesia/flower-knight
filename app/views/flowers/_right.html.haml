@@ -18,63 +18,112 @@
       アビリティ
     .right_column_ev
       効果値
-  .right_main
-    .right_main_nation
-      リ
-    .right_main_loc
-      540
-    .right_main_name
-      エノテラ
-    .right_main_atr
-      斬
-    .right_main_skill
-      全体変則
-    .ability
-      .ability-box
-        .ability-box_1
-          攻
-        .ability-box_2
-          全体
-        .ability-box_3
-          攻撃力上昇
-        .ability-box_4
-          22%
-      .ability-box
-        .ability-box_1
-          技
-        .ability-box_2
-          全体
-        .ability-box_3
-          1T目スキル発動
-        .ability-box_4
-          1.65倍
-  .right_main
-    .right_main_nation
-      リ
-    .right_main_loc
-      550
-    .right_main_name
-      コデマリ(イースター)
-    .right_main_atr
-      突
-    .right_main_skill
-      全体変則
-    .ability
-      .ability-box
-        .ability-box_1
-          攻
-        .ability-box_2
-          全体
-        .ability-box_3
-          攻撃力上昇
-        .ability-box_4
-          25%
-      .ability-box
-        .ability-box_1
-          威
-        .ability-box_2
-          全体
-        .ability-box_3
-          スキルダメージ上昇
-        .ability-box_4
-          15%
+  - @flowers.each do |flower|
+    .right_main
+      .right_main_nation
+        = flower.nation
+      .right_main_loc
+        = flower.locomotion
+      .right_main_name
+        = flower.name
+      .right_main_atr
+        = flower.job
+      .right_main_skill
+        = flower.skill
+      .ability
+        .ability-box
+          .ability-box_1
+            = @abilities[flower.ability_ids[0]-1].name
+          .ability-box_2
+            = @abilities[flower.ability_ids[0]-1].tar
+          .ability-box_3
+            = @abilities[flower.ability_ids[0]-1].effect
+          .ability-box_4
+            = @abilities[flower.ability_ids[0]-1].weight
+        .ability-box
+          .ability-box_1
+            = @abilities[flower.ability_ids[1]-1].name
+          .ability-box_2
+            = @abilities[flower.ability_ids[1]-1].tar
+          .ability-box_3
+            = @abilities[flower.ability_ids[1]-1].effect
+          .ability-box_4
+            = @abilities[flower.ability_ids[1]-1].weight
+        .ability-box
+          .ability-box_1
+            = @abilities[flower.ability_ids[2]-1].name
+          .ability-box_2
+            = @abilities[flower.ability_ids[2]-1].tar
+          .ability-box_3
+            = @abilities[flower.ability_ids[2]-1].effect
+          .ability-box_4
+            = @abilities[flower.ability_ids[2]-1].weight
+        .ability-box
+          .ability-box_1
+            = @abilities[flower.ability_ids[3]-1].name
+          .ability-box_2
+            = @abilities[flower.ability_ids[3]-1].tar
+          .ability-box_3
+            = @abilities[flower.ability_ids[3]-1].effect
+          .ability-box_4
+            = @abilities[flower.ability_ids[3]-1].weight
+        .ability-box
+          .ability-box_1
+            = @abilities[flower.ability_ids[4]-1].name
+          .ability-box_2
+            = @abilities[flower.ability_ids[4]-1].tar
+          .ability-box_3
+            = @abilities[flower.ability_ids[4]-1].effect
+          .ability-box_4
+            = @abilities[flower.ability_ids[4]-1].weight
+        .ability-box
+          .ability-box_b1
+            = @abilities[flower.ability_ids[5]-1].name
+          .ability-box_b2
+            = @abilities[flower.ability_ids[5]-1].tar
+          .ability-box_b3
+            = @abilities[flower.ability_ids[5]-1].effect
+          .ability-box_b4
+            = @abilities[flower.ability_ids[5]-1].weight
+
+
+            
+        -# .ability-box
+        -#   .ability-box_1
+        -#     = @abilities[flower.ability_ids[5]-1].name
+        -#   .ability-box_2
+        -#     = @abilities[flower.ability_ids[5]-1].name
+        -#   .ability-box_b
+        -#     = @abilities[flower.ability_ids[5]-1].name
+        -#   .ability-box_4
+        -#     = @abilities[flower.ability_ids[5]-1].name
+  -# .right_main
+  -#   .right_main_nation
+  -#     リ
+  -#   .right_main_loc
+  -#     550
+  -#   .right_main_name
+  -#     コデマリ(イースター)
+  -#   .right_main_atr
+  -#     突
+  -#   .right_main_skill
+  -#     全体変則
+  -#   .ability
+  -#     .ability-box
+  -#       .ability-box_1
+  -#         攻
+  -#       .ability-box_2
+  -#         全体
+  -#       .ability-box_3
+  -#         攻撃力上昇
+  -#       .ability-box_4
+  -#         25%
+  -#     .ability-box
+  -#       .ability-box_1
+  -#         威
+  -#       .ability-box_2
+  -#         全体
+  -#       .ability-box_3
+  -#         スキルダメージ上昇
+  -#       .ability-box_4
+  -#         15%
