@@ -1,10 +1,17 @@
 class FlowersController < ApplicationController
+  before_action :set_chara
+
   def index
-    # @flower = Flower.find(1)
-    # @flower = Flower.find(2)
-    # @ability = Ability.find(2)
+    # gon.flowers = @flowers
+    # gon.abilities = @abilities
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def set_chara
     @flowers = Flower.all
     @abilities = Ability.all
-    @num = 0
   end
 end

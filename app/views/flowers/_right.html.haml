@@ -18,73 +18,119 @@
       アビリティ
     .right_column_ev
       効果値
-  - @flowers.each do |flower|
-    .right_main
-      .right_main_nation
-        = flower.nation
-      .right_main_loc
-        = flower.locomotion
-      .right_main_name
-        = flower.name
-      .right_main_atr
-        = flower.job
-      .right_main_skill
-        = flower.skill
-      .ability
-        .ability-box
-          .ability-box_1
-            = @abilities[flower.ability_ids[0]-1].name
-          .ability-box_2
-            = @abilities[flower.ability_ids[0]-1].tar
-          .ability-box_3
-            = @abilities[flower.ability_ids[0]-1].effect
-          .ability-box_4
-            = @abilities[flower.ability_ids[0]-1].weight
-        .ability-box
-          .ability-box_1
-            = @abilities[flower.ability_ids[1]-1].name
-          .ability-box_2
-            = @abilities[flower.ability_ids[1]-1].tar
-          .ability-box_3
-            = @abilities[flower.ability_ids[1]-1].effect
-          .ability-box_4
-            = @abilities[flower.ability_ids[1]-1].weight
-        .ability-box
-          .ability-box_1
-            = @abilities[flower.ability_ids[2]-1].name
-          .ability-box_2
-            = @abilities[flower.ability_ids[2]-1].tar
-          .ability-box_3
-            = @abilities[flower.ability_ids[2]-1].effect
-          .ability-box_4
-            = @abilities[flower.ability_ids[2]-1].weight
-        .ability-box
-          .ability-box_1
-            = @abilities[flower.ability_ids[3]-1].name
-          .ability-box_2
-            = @abilities[flower.ability_ids[3]-1].tar
-          .ability-box_3
-            = @abilities[flower.ability_ids[3]-1].effect
-          .ability-box_4
-            = @abilities[flower.ability_ids[3]-1].weight
-        .ability-box
-          .ability-box_1
-            = @abilities[flower.ability_ids[4]-1].name
-          .ability-box_2
-            = @abilities[flower.ability_ids[4]-1].tar
-          .ability-box_3
-            = @abilities[flower.ability_ids[4]-1].effect
-          .ability-box_4
-            = @abilities[flower.ability_ids[4]-1].weight
-        .ability-box
-          .ability-box_b1
-            = @abilities[flower.ability_ids[5]-1].name
-          .ability-box_b2
-            = @abilities[flower.ability_ids[5]-1].tar
-          .ability-box_b3
-            = @abilities[flower.ability_ids[5]-1].effect
-          .ability-box_b4
-            = @abilities[flower.ability_ids[5]-1].weight
+  .right2
+    - @flowers.each do |flower|
+      .right2_main
+        .right2_main_nation
+          = flower.nation
+        .right2_main_loc
+          = flower.locomotion
+        .right2_main_name
+          = flower.name
+        .right2_main_atr
+          = flower.job
+        .right2_main_skill
+          = flower.skill
+        .ability
+          .ability-box
+            .ability-box_1
+              = flower.a1
+            .ability-box_2
+              = flower.a2
+            .ability-box_3
+              = flower.a3
+            .ability-box_4
+              = flower.a4
+          .ability-box
+            .ability-box_1
+              = flower.b1
+            .ability-box_2
+              = flower.b2
+            .ability-box_3
+              = flower.b3
+            .ability-box_4
+              = flower.b4
+          .ability-box
+            .ability-box_1
+              = flower.c1
+            .ability-box_2
+              = flower.c2
+            .ability-box_3
+              = flower.c3
+            .ability-box_4
+              = flower.c4
+          .ability-box
+            .ability-box_1
+              = flower.d1
+            .ability-box_2
+              = flower.d2
+            .ability-box_3
+              = flower.d3
+            .ability-box_4
+              = flower.d4
+          .ability-box
+            .ability-box_1
+              = flower.e1
+            .ability-box_2
+              = flower.e2
+            .ability-box_3
+              = flower.e3
+            .ability-box_4
+              = flower.e4
+          .ability-box
+            .ability-box_b1
+              = flower.f1
+            .ability-box_b2
+              = flower.f2
+            .ability-box_b3
+              = flower.f3
+            .ability-box_b4
+              = flower.f4
+          -# .ability-box
+          -#   .ability-box_1
+          -#     = @abilities[flower.ability_ids[1]-1].a1
+          -#   .ability-box_2
+          -#     = @abilities[flower.ability_ids[1]-1].tar
+          -#   .ability-box_3
+          -#     = @abilities[flower.ability_ids[1]-1].effect
+          -#   .ability-box_4
+          -#     = @abilities[flower.ability_ids[1]-1].weight
+          -# .ability-box
+          -#   .ability-box_1
+          -#     = @abilities[flower.ability_ids[2]-1].a1
+          -#   .ability-box_2
+          -#     = @abilities[flower.ability_ids[2]-1].tar
+          -#   .ability-box_3
+          -#     = @abilities[flower.ability_ids[2]-1].effect
+          -#   .ability-box_4
+          -#     = @abilities[flower.ability_ids[2]-1].weight
+          -# .ability-box
+          -#   .ability-box_1
+          -#     = @abilities[flower.ability_ids[3]-1].a1
+          -#   .ability-box_2
+          -#     = @abilities[flower.ability_ids[3]-1].tar
+          -#   .ability-box_3
+          -#     = @abilities[flower.ability_ids[3]-1].effect
+          -#   .ability-box_4
+          -#     = @abilities[flower.ability_ids[3]-1].weight
+          -# .ability-box
+          -#   .ability-box_1
+          -#     = @abilities[flower.ability_ids[4]-1].a1
+          -#   .ability-box_2
+          -#     = @abilities[flower.ability_ids[4]-1].tar
+          -#   .ability-box_3
+          -#     = @abilities[flower.ability_ids[4]-1].effect
+          -#   .ability-box_4
+          -#     = @abilities[flower.ability_ids[4]-1].weight
+          -# .ability-box
+          -#   .ability-box_b1
+          -#     = @abilities[flower.ability_ids[5]-1].a1
+          -#   .ability-box_b2
+          -#     = @abilities[flower.ability_ids[5]-1].tar
+          -#   .ability-box_b3
+          -#     = @abilities[flower.ability_ids[5]-1].effect
+          -#   .ability-box_b4
+          -#     = @abilities[flower.ability_ids[5]-1].weight
 
 
             
