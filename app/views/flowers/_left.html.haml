@@ -1,23 +1,24 @@
 .left
+  .left_reset
+    %input.submit-reset{:type => "button", :value => " 表示リセット "}
   .left_name
     ー キャラ名で検索
-    %input.form{:placeholder => "ここにキャラ名を入力"}
+    %input#form.form{:placeholder => "ここにキャラ名を入力", :type => "text"}/
   .left_atr
-    ー 属性の絞込み
+    ー 属性で検索
     .left_atr_check
-    %input{:type => "checkbox", :value => "斬"}
-    斬
-    %input{:type => "checkbox", :value => "打"}
-    打
-    %input{:type => "checkbox", :value => "突"}
-    突
-    %input{:type => "checkbox", :value => "魔"}
-    魔
+    %input.submit1{:type => "button", :value => " 斬 "}
+    %input.submit2{:type => "button", :value => " 打 "}
+    %input.submit3{:type => "button", :value => " 突 "}
+    %input.submit4{:type => "button", :value => " 魔 "}
   .left_ability
     ー アビリティ検索
     .left_ability_box
-      %input.in{:type => "checkbox", :value => "1"}>/
-      準備中
+      %input.in{:type => "button", :value => " 準備中 "}>/
+    .left_ability_box
+      %input.in{:type => "button", :value => " 準備中 "}>/
+    .left_ability_box
+      %input.in{:type => "button", :value => " 準備中 "}>/
 
 
 

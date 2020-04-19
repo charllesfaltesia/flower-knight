@@ -2,17 +2,6 @@
   box-sizing: border-box;
 }
 
-// .li{
-//   display: inline;
-// }
-// .wrapper{
-//   position: relative;
-// }
-
-.wrapper{
-  border: 1px solid black;
-}
-
 .header{
   background-color: #208fce;
   position: fixed;
@@ -21,7 +10,7 @@
   border-bottom: 1px solid black;
   &_title{
     height:  60px;
-    width :1050px;
+    width :1250px;
     background-color: #1075af;
     line-height: 60px;
     font-size: 32px;
@@ -30,7 +19,7 @@
   }
   &_menu{
     height:  40px;
-    width :1050px;
+    width :1250px;
     background-color: #1d8bca;
     padding-left: 20px;
     margin: 0 auto;
@@ -55,9 +44,15 @@
   font-size: 20px;
   background-color: #bce3f9;
   width : 250px;
+  height: auto;
   padding: 120px 5px 20px 5px;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  &_reset{
+    .submit-reset{
+      background-color: #1e8aca;
+    }
+  }
   &_name{
     margin-bottom: 15px;
     .form{
@@ -70,12 +65,27 @@
   }
   &_atr{
     margin-bottom: 15px;
+    .submit1{
+      background-color: $zan;
+    }
+    .submit2{
+      background-color: $da;
+    }
+    .submit3{
+      background-color: $totsu;
+    }
+    .submit4{
+      background-color: $ma;
+    }
+    .submit5{
+      background-color: #1e8aca;
+    }
   }
   &_ability{
     &_box{
-      height:16px;
+      margin-bottom: 2px;
       .in{
-        padding-bottom: 3px;
+        background-color: $zan;
       }
     }
   }
@@ -145,7 +155,14 @@
       background-color: #ffe0e0;
     }
   }
+}
   // -----------------------ここから花騎士
+.right2{
+  width :100%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  padding: 0 15px;
+  // background-color: blueviolet;
+  overflow: scroll;
   &_main{
     margin : 0 auto;
     // background-color: blue;
