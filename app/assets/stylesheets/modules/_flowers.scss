@@ -77,15 +77,25 @@
     .submit4{
       background-color: $ma;
     }
-    .submit5{
-      background-color: #1e8aca;
-    }
   }
   &_ability{
     &_box{
       margin-bottom: 2px;
-      .in{
+      .a-submit1{
         background-color: $zan;
+      }
+      .a-submit2{
+        background-color: $da;
+      }
+      .a-submit3{
+        background-color: $totsu;
+      }
+      .a-submit4{
+        background-color: $ma;
+      }
+      .a-submit5{
+        background-color: $cri;
+        border: 1px solid #ff9a00;
       }
     }
   }
@@ -195,6 +205,8 @@
     &_name{
       width:210px;
       margin: auto;
+      font-weight: bold;
+      font-size: 20px;
       // background-color: #fff8f8;
     }
     &_skill{

@@ -112,11 +112,9 @@ $(function() {
   valGlobal2 = 0; //名前検索で、検索中だった時に1に変えて保存
   //表示をリセットする-------------------------------
   $(".submit-reset").on("click", function() {
-    let job = 5;
     $.ajax({
       type: 'GET',
       url: '/flowers',
-      data: { keyword: job },
       dataType: 'json'
     })
     .done(function(flowers){
@@ -128,7 +126,7 @@ $(function() {
       })
     })
     .fail(function(){
-      console.log('通信状況を確認して下さい');
+      console.log('エラー');
     })
   });
   //キャラ名で検索-------------------------------
@@ -163,21 +161,19 @@ $(function() {
       }
     })
     .fail(function(){
-      console.log('通信状況を確認して下さい');
+      console.log('エラー');
     })
   });
   //斬属性を検索-------------------------------
   $(".submit1").on("click", function() {
-    let job1 = 1;
     $.ajax({
       type: 'GET',
       url: '/flowers',
-      data: { keyword: job1 },
       dataType: 'json'
     })
     .done(function(flowers){
       search_list.empty();
-      if(job1 == 1 && valGlobal2 == 1){
+      if(valGlobal2 == 1){
         let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
@@ -198,24 +194,24 @@ $(function() {
           filtered1.forEach(function(flower){
             appendFlower(flower);
           });
+          valGlobal1 = filtered1;
+          valGlobal2 = 1;
       }
     })
     .fail(function(){
-      console.log('通信状況を確認して下さい');
+      console.log('エラー');
     })
   });
   //打属性を検索-------------------------------
   $(".submit2").on("click", function() {
-    let job2 = 1;
     $.ajax({
       type: 'GET',
       url: '/flowers',
-      data: { keyword: job2 },
       dataType: 'json'
     })
     .done(function(flowers){
       search_list.empty();
-      if(job2 == 1 && valGlobal2 == 1){
+      if(valGlobal2 == 1){
         let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
@@ -236,24 +232,24 @@ $(function() {
           filtered2.forEach(function(flower){
             appendFlower(flower);
           });
+          valGlobal1 = filtered1;
+          valGlobal2 = 1;
       }
     })
     .fail(function(){
-      console.log('通信状況を確認して下さい');
+      console.log('エラー');
     })
   });
   //突属性を検索-------------------------------
   $(".submit3").on("click", function() {
-    let job3 = 1;
     $.ajax({
       type: 'GET',
       url: '/flowers',
-      data: { keyword: job3 },
       dataType: 'json'
     })
     .done(function(flowers){
       search_list.empty();
-      if(job3 == 1 && valGlobal2 == 1){
+      if(valGlobal2 == 1){
         let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
@@ -274,24 +270,24 @@ $(function() {
           filtered3.forEach(function(flower){
             appendFlower(flower);
           });
+          valGlobal1 = filtered3;
+          valGlobal2 = 1;
       }
     })
     .fail(function(){
-      console.log('通信状況を確認して下さい');
+      console.log('エラー');
     })
   });
   //魔属性を検索-------------------------------
   $(".submit4").on("click", function() {
-    let job4 = 1;
     $.ajax({
       type: 'GET',
       url: '/flowers',
-      data: { keyword: job4 },
       dataType: 'json'
     })
     .done(function(flowers){
       search_list.empty();
-      if(job4 == 1 && valGlobal2 == 1){
+      if(valGlobal2 == 1){
         let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
@@ -312,10 +308,373 @@ $(function() {
           filtered4.forEach(function(flower){
             appendFlower(flower);
           });
+          valGlobal1 = filtered1;
+          valGlobal2 = 1;
       }
     })
     .fail(function(){
-      console.log('通信状況を確認して下さい');
+      console.log('エラー');
     })
   });
+  //斬　属性付与を検索-------------------------------
+  $(".a-submit1").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        let strage = valGlobal1;
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("斬") != -1){
+              return a4;
+            } else if(b4.indexOf("斬") != -1){
+              return b4;
+            } else if(c4.indexOf("斬") != -1){
+              return c4;
+            } else if(d4.indexOf("斬") != -1){
+              return d4;
+            } else if(e4.indexOf("斬") != -1){
+              return e4;
+            } else if(f4.indexOf("斬") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = strage;
+      }
+      else{
+        let a_filter1 = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("斬") != -1){
+              return a4;
+            } else if(b4.indexOf("斬") != -1){
+              return b4;
+            } else if(c4.indexOf("斬") != -1){
+              return c4;
+            } else if(d4.indexOf("斬") != -1){
+              return d4;
+            } else if(e4.indexOf("斬") != -1){
+              return e4;
+            } else if(f4.indexOf("斬") != -1){
+              return f4;
+            }
+          })
+          a_filter1.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = a_filter1;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //打　属性付与を検索-------------------------------
+  $(".a-submit2").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        let strage = valGlobal1;
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("打") != -1){
+              return a4;
+            } else if(b4.indexOf("打") != -1){
+              return b4;
+            } else if(c4.indexOf("打") != -1){
+              return c4;
+            } else if(d4.indexOf("打") != -1){
+              return d4;
+            } else if(e4.indexOf("打") != -1){
+              return e4;
+            } else if(f4.indexOf("打") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = strage;
+      }
+      else{
+        let a_filter2 = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("打") != -1){
+              return a4;
+            } else if(b4.indexOf("打") != -1){
+              return b4;
+            } else if(c4.indexOf("打") != -1){
+              return c4;
+            } else if(d4.indexOf("打") != -1){
+              return d4;
+            } else if(e4.indexOf("打") != -1){
+              return e4;
+            } else if(f4.indexOf("打") != -1){
+              return f4;
+            }
+          })
+          a_filter2.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = a_filter2;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //突属性付与を検索-------------------------------
+  $(".a-submit3").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        let strage = valGlobal1;
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("突") != -1){
+              return a4;
+            } else if(b4.indexOf("突") != -1){
+              return b4;
+            } else if(c4.indexOf("突") != -1){
+              return c4;
+            } else if(d4.indexOf("突") != -1){
+              return d4;
+            } else if(e4.indexOf("突") != -1){
+              return e4;
+            } else if(f4.indexOf("突") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = strage;
+      }
+      else{
+        let a_filter3 = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("突") != -1){
+              return a4;
+            } else if(b4.indexOf("突") != -1){
+              return b4;
+            } else if(c4.indexOf("突") != -1){
+              return c4;
+            } else if(d4.indexOf("突") != -1){
+              return d4;
+            } else if(e4.indexOf("突") != -1){
+              return e4;
+            } else if(f4.indexOf("突") != -1){
+              return f4;
+            }
+          })
+          a_filter3.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = a_filter3;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //魔　属性付与を検索-------------------------------
+  $(".a-submit4").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        let strage = valGlobal1;
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("魔") != -1){
+              return a4;
+            } else if(b4.indexOf("魔") != -1){
+              return b4;
+            } else if(c4.indexOf("魔") != -1){
+              return c4;
+            } else if(d4.indexOf("魔") != -1){
+              return d4;
+            } else if(e4.indexOf("魔") != -1){
+              return e4;
+            } else if(f4.indexOf("魔") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = strage;
+      }
+      else{
+        let a_filter4 = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("魔") != -1){
+              return a4;
+            } else if(b4.indexOf("魔") != -1){
+              return b4;
+            } else if(c4.indexOf("魔") != -1){
+              return c4;
+            } else if(d4.indexOf("魔") != -1){
+              return d4;
+            } else if(e4.indexOf("魔") != -1){
+              return e4;
+            } else if(f4.indexOf("魔") != -1){
+              return f4;
+            }
+          })
+          a_filter4.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = a_filter4;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //クリティカル系を検索-------------------------------
+  $(".a-submit5").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        let strage = valGlobal1;
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a1 = elem.a1
+            b1 = elem.b1
+            c1 = elem.c1
+            d1 = elem.d1
+            e1 = elem.e1
+            f1 = elem.f1
+            if(a1.indexOf("ｸﾘ") != -1){
+              return a1;
+            } else if(b1.indexOf("ｸﾘ") != -1){
+              return b1;
+            } else if(c1.indexOf("ｸﾘ") != -1){
+              return c1;
+            } else if(d1.indexOf("ｸﾘ") != -1){
+              return d1;
+            } else if(e1.indexOf("ｸﾘ") != -1){
+              return e1;
+            } else if(f1.indexOf("ｸﾘ") != -1){
+              return f1;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = strage;
+      }
+      else{
+        let a_filter5 = $.grep(flowers,
+          function(elem, index){
+            a1 = elem.a1
+            b1 = elem.b1
+            c1 = elem.c1
+            d1 = elem.d1
+            e1 = elem.e1
+            f1 = elem.f1
+            if(a1.indexOf("ｸﾘ") != -1){
+              return a1;
+            } else if(b1.indexOf("ｸﾘ") != -1){
+              return b1;
+            } else if(c1.indexOf("ｸﾘ") != -1){
+              return c1;
+            } else if(d1.indexOf("ｸﾘ") != -1){
+              return d1;
+            } else if(e1.indexOf("ｸﾘ") != -1){
+              return e1;
+            } else if(f1.indexOf("ｸﾘ") != -1){
+              return f1;
+            }
+          })
+          a_filter5.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = a_filter5;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  
 });
