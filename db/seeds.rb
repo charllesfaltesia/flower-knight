@@ -1,4 +1,4 @@
-Flower.create!(
+Flower.create(
   name: 'ブラックバッカラ',
   locomotion: '430',
   job: '斬',
