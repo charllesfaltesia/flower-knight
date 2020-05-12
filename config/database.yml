@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: flower-knight_production
-  username: flower-knight
-  password: <%= ENV['FLOWER-KNIGHT_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
