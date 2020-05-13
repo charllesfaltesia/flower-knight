@@ -29,7 +29,7 @@
       text-decoration: none;
       background-color: #2fa4e7;
       color: black;
-      padding: 10px;
+      padding: 5px;
       border: 1px solid;
     }
     
@@ -83,12 +83,16 @@
       margin-bottom: 2px;
       .a-submit1{
         background-color: $zan;
+        margin-right: 5px;
+        margin-bottom:5px;
       }
       .a-submit2{
         background-color: $da;
       }
       .a-submit3{
         background-color: $totsu;
+        margin-right: 5px;
+        margin-bottom:5px;
       }
       .a-submit4{
         background-color: $ma;
@@ -96,6 +100,26 @@
       .a-submit5{
         background-color: $cri;
         border: 1px solid #ff9a00;
+      }
+      .a-submit6{
+        background-color: white;
+        border: 1px solid black;
+        margin-right: 5px;
+        margin-bottom:5px;
+      }
+      .a-submit7{
+        background-color: white;
+        border: 1px solid black;
+      }
+      .a-submit8{
+        background-color: white;
+        border: 1px solid black;
+        margin-right: 5px;
+        margin-bottom:5px;
+      }
+      .a-submit9{
+        background-color: white;
+        border: 1px solid black;
       }
     }
   }
@@ -107,7 +131,7 @@
   font-family: Verdana, Arial, Helvetica, sans-serif;
   padding:115px 15px 0 15px;
   // background-color: blueviolet;
-  overflow: scroll;
+  // overflow: scroll;
   &_column{
     margin : 0 auto;
     // background-color: red;
@@ -172,7 +196,7 @@
   font-family: Verdana, Arial, Helvetica, sans-serif;
   padding: 0 15px;
   // background-color: blueviolet;
-  overflow: scroll;
+  // overflow: scroll;
   &_main{
     margin : 0 auto;
     // background-color: blue;
