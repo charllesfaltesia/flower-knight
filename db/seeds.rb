@@ -1,4 +1,4 @@
-Flower.create([{
+Flower.create({
   name:'ブラックバッカラ',
   locomotion:'430',
   job:'斬',
@@ -62,7 +62,7 @@ Flower.create([{
   f3:'',
   f4:'',
   rare:'通常'
-}])
+})
 
 # Flower.create(
 #   name:'カトレア',
