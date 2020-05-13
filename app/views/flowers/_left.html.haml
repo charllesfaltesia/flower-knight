@@ -4,8 +4,15 @@
   .left_name
     ① キャラ名で検索
     %input#form.form{:placeholder => "ここにキャラ名を入力", :type => "text"}/
+  .left_atr
+    ② 属性で検索
+    .left_atr_check
+    %input.submit1{:type => "button", :value => " 斬 "}
+    %input.submit2{:type => "button", :value => " 打 "}
+    %input.submit3{:type => "button", :value => " 突 "}
+    %input.submit4{:type => "button", :value => " 魔 "}
   .left_ability
-    ② アビリティ検索
+    ③ アビリティ検索
     %br
     ・属性付与
     .left_ability_box
@@ -18,13 +25,6 @@
       ・クリティカル系
       %br
       %input.a-submit5{:type => "button", :value => " クリティカル "}>/
-  .left_atr
-    ③ 属性で検索
-    .left_atr_check
-    %input.submit1{:type => "button", :value => " 斬 "}
-    %input.submit2{:type => "button", :value => " 打 "}
-    %input.submit3{:type => "button", :value => " 突 "}
-    %input.submit4{:type => "button", :value => " 魔 "}
 
 
 
