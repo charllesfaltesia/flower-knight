@@ -141,14 +141,14 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(input.length != 0){
-        let filtered = $.grep(flowers,
+        let filtered= $.grep(flowers,
           function(elem, index){
             str = elem.name
             return (str.indexOf(input) != -1);
           })
-          valGlobal1 = filtered;
+          valGlobal1 = filtered
           valGlobal2 = 1;
-          filtered.forEach(function(flower){
+          filteredforEach(function(flower){
             appendFlower(flower);
           });
       }
@@ -174,7 +174,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             str = elem.job
@@ -183,18 +182,17 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let filtered1 = $.grep(flowers,
+        let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
             return (str.indexOf("斬") != -1);
           })
-          filtered1.forEach(function(flower){
+          filtered.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = filtered1;
+          valGlobal1 = filtered;
           valGlobal2 = 1;
       }
     })
@@ -212,7 +210,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             str = elem.job
@@ -221,18 +218,17 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-        valGlobal1 = strage;
-      }
+     }
       else{
-        let filtered2 = $.grep(flowers,
+        let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
             return (str.indexOf("打") != -1);
           })
-          filtered2.forEach(function(flower){
+          filtered.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = filtered1;
+          valGlobal1 = filtered;
           valGlobal2 = 1;
       }
     })
@@ -250,7 +246,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             str = elem.job
@@ -259,18 +254,17 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let filtered3 = $.grep(flowers,
+        let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
             return (str.indexOf("突") != -1);
           })
-          filtered3.forEach(function(flower){
+          filtered.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = filtered3;
+          valGlobal1 = filtered;
           valGlobal2 = 1;
       }
     })
@@ -288,7 +282,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             str = elem.job
@@ -297,18 +290,17 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let filtered4 = $.grep(flowers,
+        let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
             return (str.indexOf("魔") != -1);
           })
-          filtered4.forEach(function(flower){
+          filtered.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = filtered1;
+          valGlobal1 = filtered;
           valGlobal2 = 1;
       }
     })
@@ -326,7 +318,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             a4 = elem.a4
@@ -352,10 +343,9 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let a_filter1 = $.grep(flowers,
+        let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
             b4 = elem.b4
@@ -377,10 +367,10 @@ $(function() {
               return f4;
             }
           })
-          a_filter1.forEach(function(flower){
+          filter.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = a_filter1;
+          valGlobal1 = filter;
           valGlobal2 = 1;
       }
     })
@@ -398,7 +388,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             a4 = elem.a4
@@ -424,10 +413,9 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let a_filter2 = $.grep(flowers,
+        let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
             b4 = elem.b4
@@ -449,10 +437,10 @@ $(function() {
               return f4;
             }
           })
-          a_filter2.forEach(function(flower){
+          filter.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = a_filter2;
+          valGlobal1 = filter;
           valGlobal2 = 1;
       }
     })
@@ -470,7 +458,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             a4 = elem.a4
@@ -496,10 +483,9 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let a_filter3 = $.grep(flowers,
+        let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
             b4 = elem.b4
@@ -521,10 +507,10 @@ $(function() {
               return f4;
             }
           })
-          a_filter3.forEach(function(flower){
+          filter.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = a_filter3;
+          valGlobal1 = filter;
           valGlobal2 = 1;
       }
     })
@@ -542,7 +528,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             a4 = elem.a4
@@ -568,10 +553,9 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let a_filter4 = $.grep(flowers,
+        let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
             b4 = elem.b4
@@ -593,10 +577,10 @@ $(function() {
               return f4;
             }
           })
-          a_filter4.forEach(function(flower){
+          filter.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = a_filter4;
+          valGlobal1 = filter;
           valGlobal2 = 1;
       }
     })
@@ -614,7 +598,6 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(valGlobal2 == 1){
-        let strage = valGlobal1;
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
             a1 = elem.a1
@@ -640,10 +623,9 @@ $(function() {
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = strage;
       }
       else{
-        let a_filter5 = $.grep(flowers,
+        let filter = $.grep(flowers,
           function(elem, index){
             a1 = elem.a1
             b1 = elem.b1
@@ -665,10 +647,220 @@ $(function() {
               return f1;
             }
           })
-          a_filter5.forEach(function(flower){
+          filter.forEach(function(flower){
             appendFlower(flower);
           });
-          valGlobal1 = a_filter5;
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //スキル発動率1.2倍系を検索-------------------------------
+  $(".a-submit6").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("1.2倍") != -1){
+              return a4;
+            } else if(b4.indexOf("1.2倍") != -1){
+              return b4;
+            } else if(c4.indexOf("1.2倍") != -1){
+              return c4;
+            } else if(d4.indexOf("1.2倍") != -1){
+              return d4;
+            } else if(e4.indexOf("1.2倍") != -1){
+              return e4;
+            } else if(f4.indexOf("1.2倍") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+      }
+      else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("1.2倍") != -1){
+              return a4;
+            } else if(b4.indexOf("1.2倍") != -1){
+              return b4;
+            } else if(c4.indexOf("1.2倍") != -1){
+              return c4;
+            } else if(d4.indexOf("1.2倍") != -1){
+              return d4;
+            } else if(e4.indexOf("1.2倍") != -1){
+              return e4;
+            } else if(f4.indexOf("1.2倍") != -1){
+              return f4;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //スキル発動率1.28~1.36倍系を検索-------------------------------
+  $(".a-submit7").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("1.36倍") != -1){
+              return a4;
+            } else if(b4.indexOf("1.36倍") != -1){
+              return b4;
+            } else if(c4.indexOf("1.36倍") != -1){
+              return c4;
+            } else if(d4.indexOf("1.36倍") != -1){
+              return d4;
+            } else if(e4.indexOf("1.36倍") != -1){
+              return e4;
+            } else if(f4.indexOf("1.36倍") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+      }
+      else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("1.36倍") != -1){
+              return a4;
+            } else if(b4.indexOf("1.36倍") != -1){
+              return b4;
+            } else if(c4.indexOf("1.36倍") != -1){
+              return c4;
+            } else if(d4.indexOf("1.36倍") != -1){
+              return d4;
+            } else if(e4.indexOf("1.36倍") != -1){
+              return e4;
+            } else if(f4.indexOf("1.36倍") != -1){
+              return f4;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //スキル発動率1T目1.65倍系を検索-------------------------------
+  $(".a-submit8").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("1.65倍") != -1){
+              return a4;
+            } else if(b4.indexOf("1.65倍") != -1){
+              return b4;
+            } else if(c4.indexOf("1.65倍") != -1){
+              return c4;
+            } else if(d4.indexOf("1.65倍") != -1){
+              return d4;
+            } else if(e4.indexOf("1.65倍") != -1){
+              return e4;
+            } else if(f4.indexOf("1.65倍") != -1){
+              return f4;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          });
+      }
+      else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a4.indexOf("1.65倍") != -1){
+              return a4;
+            } else if(b4.indexOf("1.65倍") != -1){
+              return b4;
+            } else if(c4.indexOf("1.65倍") != -1){
+              return c4;
+            } else if(d4.indexOf("1.65倍") != -1){
+              return d4;
+            } else if(e4.indexOf("1.65倍") != -1){
+              return e4;
+            } else if(f4.indexOf("1.65倍") != -1){
+              return f4;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          });
+          valGlobal1 = filter;
           valGlobal2 = 1;
       }
     })
