@@ -141,14 +141,14 @@ $(function() {
     .done(function(flowers){
       search_list.empty();
       if(input.length != 0){
-        let filtered= $.grep(flowers,
+        let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.name
             return (str.indexOf(input) != -1);
           })
           valGlobal1 = filtered
           valGlobal2 = 1;
-          filteredforEach(function(flower){
+          filtered.forEach(function(flower){
             appendFlower(flower);
           });
       }
@@ -868,5 +868,5 @@ $(function() {
       console.log('エラー');
     })
   });
-  
+
 });
