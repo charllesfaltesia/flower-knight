@@ -13,7 +13,7 @@ $(function() {
       <div class="right2_main_name">
         ${flower.name}
       </div>
-      <div class="right2_main_atr">
+      <div class="right2_main_atr" value="${flower.job}">
         ${flower.job}
       </div>
       <div class="right2_main_skill">
@@ -107,9 +107,67 @@ $(function() {
       </div>
     </div>`
   search_list.append(html);
+  $('.right2_main_atr').each(function(index, atr){
+    $(atr).attr('id', `atr${index}`);
+  })
+  //ここにid付ける処理を追加
   }
-
+  window.onload = appendColor();
   valGlobal2 = 0; //名前検索で、検索中だった時に1に変えて保存
+  //色を付けする-------------------------------
+  //コピーして別のfunction用意してidを付けてCSSで色つける
+  //〜〜〜〜ここから
+  function appendColor(){ 
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      if(valGlobal2 == 1){
+        $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.job
+            if(str.indexOf("斬") != -1){
+              $(`#atr${index}`).css('background-color', '#ff3c61');
+            }else if(str.indexOf("打") != -1){
+              $(`#atr${index}`).css('background-color', '#7474ff');
+            }else if(str.indexOf("突") != -1){
+              $(`#atr${index}`).css('background-color', '#feff74');
+            }else{
+              $(`#atr${index}`).css('background-color', '#e550e5');
+            }
+          }
+        )
+      }else{
+        $('.right2_main_atr').each(function(index, atr){
+          $(atr).attr('id', `atr${index}`);
+        })
+        $.grep(flowers,
+          function(elem, index){
+            str = elem.job
+            if(str.indexOf("斬") != -1){
+              $(`#atr${index}`).css('background-color', '#ff3c61');
+            }else if(str.indexOf("打") != -1){
+              $(`#atr${index}`).css('background-color', '#7474ff');
+            }else if(str.indexOf("突") != -1){
+              $(`#atr${index}`).css('background-color', '#feff74');
+            }else{
+              $(`#atr${index}`).css('background-color', '#e550e5');
+            }
+          }
+        )
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  };
+  //〜〜〜〜ここまで
+  //対応するidと色をつける処理
+  //appendまさしをwindow.onloadまさし
+  //いまあるappendColorの下にまさし
+
   //表示をリセットする-------------------------------
   $(".submit-reset").on("click", function() {
     $.ajax({
@@ -124,6 +182,7 @@ $(function() {
       flowers.forEach(function(flower){
         appendFlower(flower);
       })
+      appendColor();
     })
     .fail(function(){
       console.log('エラー');
@@ -150,14 +209,15 @@ $(function() {
           valGlobal2 = 1;
           filtered.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         valGlobal1 = flowers;
         valGlobal2 = 0;
         flowers.forEach(function(flower){
           appendFlower(flower);
         })
+        appendColor();
       }
     })
     .fail(function(){
@@ -181,9 +241,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
@@ -191,9 +251,10 @@ $(function() {
           })
           filtered.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
           valGlobal1 = filtered;
           valGlobal2 = 1;
+          appendColor();
       }
     })
     .fail(function(){
@@ -217,9 +278,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-     }
-      else{
+          })
+          appendColor();
+      }else{
         let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
@@ -227,7 +288,8 @@ $(function() {
           })
           filtered.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filtered;
           valGlobal2 = 1;
       }
@@ -253,9 +315,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
@@ -263,7 +325,8 @@ $(function() {
           })
           filtered.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filtered;
           valGlobal2 = 1;
       }
@@ -289,9 +352,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filtered = $.grep(flowers,
           function(elem, index){
             str = elem.job
@@ -299,7 +362,8 @@ $(function() {
           })
           filtered.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filtered;
           valGlobal2 = 1;
       }
@@ -342,9 +406,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -369,7 +433,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -412,9 +477,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -439,7 +504,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -482,9 +548,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -509,7 +575,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -552,9 +619,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -579,7 +646,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -622,9 +690,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a1 = elem.a1
@@ -649,7 +717,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -692,9 +761,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -719,7 +788,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -762,9 +832,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -789,7 +859,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
@@ -832,9 +903,9 @@ $(function() {
           })
           valGlobal1.forEach(function(flower){
             appendFlower(flower);
-          });
-      }
-      else{
+          })
+          appendColor();
+      }else{
         let filter = $.grep(flowers,
           function(elem, index){
             a4 = elem.a4
@@ -859,7 +930,8 @@ $(function() {
           })
           filter.forEach(function(flower){
             appendFlower(flower);
-          });
+          })
+          appendColor();
           valGlobal1 = filter;
           valGlobal2 = 1;
       }
