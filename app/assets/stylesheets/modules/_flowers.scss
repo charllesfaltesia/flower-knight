@@ -71,15 +71,18 @@
     margin-bottom: 15px;
     .submit1{
       background-color: $zan;
+      color: white;
     }
     .submit2{
       background-color: $da;
+      color: white;
     }
     .submit3{
       background-color: $totsu;
     }
     .submit4{
       background-color: $ma;
+      color: white;
     }
   }
   &_ability{
@@ -199,11 +202,8 @@
   width :100%;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   padding: 0 15px;
-  // background-color: blueviolet;
-  // overflow: scroll;
   &_main{
     margin : 0 auto;
-    // background-color: blue;
     height:150px;
     display: flex;
     border: 1px solid black;
@@ -215,7 +215,6 @@
       width:23px;
       border-right: 1px solid black;
       line-height: 150px;
-      // background-color: #fff8f8;
     }
     &_loc{
       width:36px;
@@ -235,12 +234,10 @@
       margin: auto;
       font-weight: bold;
       font-size: 20px;
-      // background-color: #fff8f8;
     }
     &_skill{
       width:100px;
       margin: auto;
-      // background-color: #fff8f8;
     }
   }
   .ability{

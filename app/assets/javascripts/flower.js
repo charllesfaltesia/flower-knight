@@ -130,12 +130,15 @@ $(function() {
             str = elem.job
             if(str.indexOf("斬") != -1){
               $(`#atr${index}`).css('background-color', '#ff3c61');
+              $(`#atr${index}`).css('color', 'white');
             }else if(str.indexOf("打") != -1){
               $(`#atr${index}`).css('background-color', '#7474ff');
+              $(`#atr${index}`).css('color', 'white');
             }else if(str.indexOf("突") != -1){
               $(`#atr${index}`).css('background-color', '#feff74');
             }else{
               $(`#atr${index}`).css('background-color', '#e550e5');
+              $(`#atr${index}`).css('color', 'white');
             }
           }
         )
@@ -148,12 +151,15 @@ $(function() {
             str = elem.job
             if(str.indexOf("斬") != -1){
               $(`#atr${index}`).css('background-color', '#ff3c61');
+              $(`#atr${index}`).css('color', 'white');
             }else if(str.indexOf("打") != -1){
               $(`#atr${index}`).css('background-color', '#7474ff');
+              $(`#atr${index}`).css('color', 'white');
             }else if(str.indexOf("突") != -1){
               $(`#atr${index}`).css('background-color', '#feff74');
             }else{
               $(`#atr${index}`).css('background-color', '#e550e5');
+              $(`#atr${index}`).css('color', 'white');
             }
           }
         )
