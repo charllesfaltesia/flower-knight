@@ -1,0 +1,220 @@
+.header-show{
+  background-color: #208fce;
+  width:100%;
+  border-bottom: 1px solid black;
+  &_title{
+    height:  60px;
+    width :1250px;
+    background-color: #1075af;
+    line-height: 60px;
+    font-size: 32px;
+    padding-left: 20px;
+    margin: 0 auto;
+  }
+  &_menu{
+    height:  40px;
+    width :1250px;
+    background-color: #1d8bca;
+    padding-left: 20px;
+    margin: 0 auto;
+    line-height: 40px;
+    display: flex;
+    .menu{
+      text-decoration: none;
+      background-color: #2fa4e7;
+      color: black;
+      padding: 5px;
+      border: 1px solid;
+    }
+    
+  }
+}
+.show{
+  display: flex;
+  &-left{
+    font-size: 20px;
+    background-color: #bce3f9;
+    height: calc(100vh - 100px);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    &-text{
+      width:250px;
+      .kougeki{
+        color: red;
+        font-size: 24px;
+        &-box{
+          display: none;
+        }
+      }
+      .cri{
+        color: #ff9a00;
+        font-size: 24px;
+        &-box{
+          display: none;
+        }
+      }
+    }
+  }
+  &-right{
+    width :100%;
+    background-color: #eaf7ff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    &-box{
+      width : 700px;
+      height: calc(100vh - 100px);
+      margin: 0 auto;
+      padding: 20px;
+      .flower-name{
+        font-weight: bold;
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+      .flower-img{
+        display: flex;
+        margin-bottom: 10px;
+        &-1{
+          text-align: center;
+          margin:5px;
+          &s{
+            height:80px;
+            width :80px;
+            background-color: gainsboro;
+          }
+        }
+        &-2{
+          text-align: center;
+          margin:5px;
+          &s{
+            height:80px;
+            width :80px;
+            background-color: lightgreen;
+          }
+        }
+        &-3{
+          text-align: center;
+          margin:5px;
+          &s{
+            height:80px;
+            width :80px;
+            background-color: palevioletred;
+          }
+        }
+        .flower-job{
+          margin-left: 20px;
+          font-size: 26px;
+          width: 180px;
+          text-align: center;
+          font-size: 26px;
+          &-zan{
+            line-height: 60px;
+            font-size: 26px;
+            width: 180px;
+            text-align: center;
+            font-size: 26px;
+            color: $zan;
+          }
+          &-da{
+            line-height: 60px;
+            font-size: 26px;
+            width: 180px;
+            text-align: center;
+            font-size: 26px;
+            color: $da;
+          }
+          &-totsu{
+            line-height: 60px;
+            font-size: 26px;
+            width: 180px;
+            text-align: center;
+            font-size: 26px;
+            color: $totsu;
+          }
+          &-ma{
+            line-height: 60px;
+            font-size: 26px;
+            width: 180px;
+            text-align: center;
+            font-size: 26px;
+            color: $ma;
+          }
+        }
+      }
+      .flower-ability{
+        display: flex;
+        border-bottom: 1px solid black;
+        font-size: 20px;
+        &-xxx{
+          margin:10px 0;
+        }
+        &-box-t1{
+          width:30px;
+        }
+        &-box-t2{
+          width:30px;
+        }
+        &-box-t3{
+          width:30px;
+        }
+        &-box-t4{
+          width:30px;
+        }
+        &-box-t5{
+          width:30px;
+        }
+        &-box-t6{
+          width:30px;
+        }
+        &-box-f1{
+          width:50px;
+        }
+        &-box-f2{
+          width:50px;
+        }
+        &-box-f3{
+          width:50px;
+        }
+        &-box-f4{
+          width:50px;
+        }
+        &-box-f5{
+          width:50px;
+        }
+        &-box-f6{
+          width:50px;
+        }
+        &-box-kouka1{
+          margin-right: 10px;
+          width:200px;
+        }
+        &-box-kouka2{
+          margin-right: 10px;
+          width:200px;
+        }
+        &-box-kouka3{
+          margin-right: 10px;
+          width:200px;
+        }
+        &-box-kouka4{
+          margin-right: 10px;
+          width:200px;
+        }
+        &-box-kouka5{
+          margin-right: 10px;
+          width:200px;
+        }
+        &-box-kouka6{
+          margin-right: 10px;
+          width:200px;
+        }
+      }
+    }
+  }
+}
+.exp{
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid gray;
+  &-s{
+    font-size: 14px;
+  }
+}

@@ -3,109 +3,110 @@ $(function() {
 
   function appendFlower(flower) {
     var html = `
-    <div class="right2_main">
-      <div class="right2_main_nation">
-        ${flower.nation}
-      </div>
-      <div class="right2_main_loc">
-        ${flower.locomotion}
-      </div>
-      <div class="right2_main_name">
-        ${flower.name}
-      </div>
-      <div class="right2_main_atr" value="${flower.job}">
-        ${flower.job}
-      </div>
-      <div class="right2_main_skill">
-        ${flower.skill}
-      </div>
-      <div class="ability">
-        <div class="ability-box">
-          <div class="ability-box_1">
-            ${flower.a1}
+    <a href="/flowers/${flower.id}">
+      <div class="right2_main">
+        <div class="right2_main_nation">
+          ${flower.nation}
+        </div>
+        <div class="right2_main_loc">
+          ${flower.locomotion}
+        </div>
+        <div class="right2_main_name">
+          ${flower.name}
+        </div>
+        <div class="right2_main_atr" value="${flower.job}">
+          ${flower.job}
+        </div>
+        <div class="right2_main_skill">
+          ${flower.skill}
+        </div>
+        <div class="ability">
+          <div class="ability-box">
+            <div class="ability-box_1">
+              ${flower.a1}
+            </div>
+            <div class="ability-box_2">
+              ${flower.a2}
+            </div>
+            <div class="ability-box_3">
+              ${flower.a3}
+            </div>
+            <div class="ability-box_4">
+              ${flower.a4}
+            </div>
           </div>
-          <div class="ability-box_2">
-            ${flower.a2}
+          <div class="ability-box">
+            <div class="ability-box_1">
+              ${flower.b1}
+            </div>
+            <div class="ability-box_2">
+              ${flower.b2}
+            </div>
+            <div class="ability-box_3">
+              ${flower.b3}
+            </div>
+            <div class="ability-box_4">
+              ${flower.b4}
+            </div>
           </div>
-          <div class="ability-box_3">
-            ${flower.a3}
+          <div class="ability-box">
+            <div class="ability-box_1">
+              ${flower.c1}
+            </div>
+            <div class="ability-box_2">
+              ${flower.c2}
+            </div>
+            <div class="ability-box_3">
+              ${flower.c3}
+            </div>
+            <div class="ability-box_4">
+              ${flower.c4}
+            </div>
           </div>
-          <div class="ability-box_4">
-            ${flower.a4}
+          <div class="ability-box">
+            <div class="ability-box_1">
+              ${flower.d1}
+            </div>
+            <div class="ability-box_2">
+              ${flower.d2}
+            </div>
+            <div class="ability-box_3">
+              ${flower.d3}
+            </div>
+            <div class="ability-box_4">
+              ${flower.d4}
+            </div>
+          </div>
+          <div class="ability-box">
+            <div class="ability-box_1">
+              ${flower.e1}
+            </div>
+            <div class="ability-box_2">
+              ${flower.e2}
+            </div>
+            <div class="ability-box_3">
+              ${flower.e3}
+            </div>
+            <div class="ability-box_4">
+              ${flower.e4}
+            </div>
+          </div>
+          <div class="ability-box">
+            <div class="ability-box_b1">
+              ${flower.f1}
+            </div>
+            <div class="ability-box_b2">
+              ${flower.f2}
+            </div>
+            <div class="ability-box_b3">
+              ${flower.f3}
+            </div>
+            <div class="ability-box_b4">
+              ${flower.f4}
+            </div>
           </div>
         </div>
-        <div class="ability-box">
-          <div class="ability-box_1">
-            ${flower.b1}
-          </div>
-          <div class="ability-box_2">
-            ${flower.b2}
-          </div>
-          <div class="ability-box_3">
-            ${flower.b3}
-          </div>
-          <div class="ability-box_4">
-            ${flower.b4}
-          </div>
-        </div>
-        <div class="ability-box">
-          <div class="ability-box_1">
-            ${flower.c1}
-          </div>
-          <div class="ability-box_2">
-            ${flower.c2}
-          </div>
-          <div class="ability-box_3">
-            ${flower.c3}
-          </div>
-          <div class="ability-box_4">
-            ${flower.c4}
-          </div>
-        </div>
-        <div class="ability-box">
-          <div class="ability-box_1">
-            ${flower.d1}
-          </div>
-          <div class="ability-box_2">
-            ${flower.d2}
-          </div>
-          <div class="ability-box_3">
-            ${flower.d3}
-          </div>
-          <div class="ability-box_4">
-            ${flower.d4}
-          </div>
-        </div>
-        <div class="ability-box">
-          <div class="ability-box_1">
-            ${flower.e1}
-          </div>
-          <div class="ability-box_2">
-            ${flower.e2}
-          </div>
-          <div class="ability-box_3">
-            ${flower.e3}
-          </div>
-          <div class="ability-box_4">
-            ${flower.e4}
-          </div>
-        </div>
-        <div class="ability-box">
-          <div class="ability-box_b1">
-            ${flower.f1}
-          </div>
-          <div class="ability-box_b2">
-            ${flower.f2}
-          </div>
-          <div class="ability-box_b3">
-            ${flower.f3}
-          </div>
-          <div class="ability-box_b4">
-            ${flower.f4}
-          </div>
-        </div>
-      </div>
-    </div>`
+      </div>`
   search_list.append(html);
   $('.right2_main_atr').each(function(index, atr){
     $(atr).attr('id', `atr${index}`);

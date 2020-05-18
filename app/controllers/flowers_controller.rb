@@ -10,6 +10,10 @@ class FlowersController < ApplicationController
     end
   end
 
+  def show
+    @flower = Flower.find(params[:id])
+  end
+
   def set_chara
     @flowers = Flower.all
     @abilities = Ability.all

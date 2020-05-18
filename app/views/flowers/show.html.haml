@@ -1,0 +1,248 @@
+.wrapper
+  .header-show
+    .header-show_title
+      FLOWER KNIGHT GIRL つーる
+    .header-show_menu
+      %ul
+        %a.menu(href="#") 花騎士検索
+        %a.menu(href="#") 準備中
+        %a.menu(href="#") 準備中
+  .show
+    .show-left
+      .show-left-text
+        アビリティ説明
+        .kougeki
+          攻
+          .kougeki-box
+            .exp
+              攻撃上昇
+              .exp-s
+            .exp
+              ボス戦攻撃上昇
+              .exp-s
+            .exp
+              攻撃上昇/敵の数(×10%)
+              .exp-s
+                ＞戦闘開始時の敵の数×10%攻撃上昇
+            .exp
+              敵少ない程攻撃上昇(+10%)
+              .exp-s
+                ＞3体で10%,2体で20%,1体で30%
+            .exp
+              1T目攻撃上昇
+              .exp-s
+            .exp
+              攻撃上昇/味方数(×5%)
+              .exp-s
+                ＞戦闘時の味方人数×5%攻撃上昇
+            .exp
+              ソーラー発動/攻撃(+15%)
+              .exp-s
+                ＞ソーラードライブ発動100%ごとに
+                ＞+15%攻撃上昇(最大300%)
+            .exp
+              ターン経過/攻撃力(+30%)
+              .exp-s
+                ＞ターン経過ごとに攻撃上昇
+                ＞最大60%()内の数字の2倍
+        .cri
+          クリティカル
+          .cri-box
+            .exp
+              クリティカル発動率
+              .exp-s
+            .exp
+              クリティカル威力
+              .exp-s
+                ＞クリティカルダメージが上昇する
+            .exp
+              1T目クリティカル
+              .exp-s
+                ＞1ターン目が必ずクリティカル
+            .exp
+              1T目のクリ威力
+              .exp-s
+                ＞1ターン目のクリティカルダメージ
+                ＞が上昇する
+        .mada
+          しばらくお待ちください
+          .madadayo
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+            .exp
+              .exp-s
+          
+    .show-right
+      .show-right-box
+        .flower-name
+          = @flower.name
+        アイコン
+        .flower-img
+          .flower-img-1
+            通常
+            .flower-img-1s
+              進化前(準備中)
+          .flower-img-2
+            進化
+            .flower-img-2s
+              進化後(準備中)
+          .flower-img-3
+            開花
+            .flower-img-3s
+              開花後(準備中)
+          .flower-job
+            属性
+            - if @flower.job == "斬"
+              .flower-job-zan
+                = @flower.job
+            - elsif @flower.job == "打"
+              .flower-job-da
+                = @flower.job
+            - elsif @flower.job == "突"
+              .flower-job-totsu
+                = @flower.job
+            - else
+              .flower-job-ma
+                = @flower.job
+        .flower-year
+          実装年
+          = @flower.year
+          年 / レアリティ
+          - if @flower.rare == "通常"
+            ★★★★★★ (通常)
+          - else
+            いまむら
+        .flower-ability-xxx
+          所持アビリティ一覧
+        .flower-ability
+          .flower-ability-box-t1
+            = @flower.a1
+          .flower-ability-box-f1
+            = @flower.a2
+          .flower-ability-box-kouka1
+            = @flower.a3
+          .flower-ability-box-atai1
+            = @flower.a4
+        .flower-ability
+          .flower-ability-box-t2
+            = @flower.b1
+          .flower-ability-box-f2
+            = @flower.b2
+          .flower-ability-box-kouka2
+            = @flower.b3
+          .flower-ability-box-atai2
+            = @flower.b4
+        .flower-ability
+          .flower-ability-box-t3
+            = @flower.c1
+          .flower-ability-box-f3
+            = @flower.c2
+          .flower-ability-box-kouka3
+            = @flower.c3
+          .flower-ability-box-atai3
+            = @flower.c4
+        .flower-ability
+          .flower-ability-box-t4
+            = @flower.d1
+          .flower-ability-box-f4
+            = @flower.d2
+          .flower-ability-box-kouka4
+            = @flower.d3
+          .flower-ability-box-atai4
+            = @flower.d4
+        - if @flower.e4 != ""
+          .flower-ability
+            .flower-ability-box-t5
+              = @flower.e1
+            .flower-ability-box-f5
+              = @flower.e2
+            .flower-ability-box-kouka5
+              = @flower.e3
+            .flower-ability-box-atai5
+              = @flower.e4
+        - if @flower.f4 !=""
+          .flower-ability
+            .flower-ability-box-t6
+              = @flower.f1
+            .flower-ability-box-f6
+              = @flower.f2
+            .flower-ability-box-kouka6
+              = @flower.f3
+            .flower-ability-box-atai6
+              = @flower.f4
