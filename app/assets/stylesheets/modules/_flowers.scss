@@ -88,45 +88,92 @@
   &_ability{
     &_box{
       margin-bottom: 2px;
-      .a-submit1{
+      .a-submit-z1{
         background-color: $zan;
+        border-radius: 2pt;
         margin-right: 5px;
         margin-bottom:5px;
       }
-      .a-submit2{
+      .a-submit-z2{
         background-color: $da;
       }
-      .a-submit3{
+      .a-submit-z3{
         background-color: $totsu;
         margin-right: 5px;
         margin-bottom:5px;
       }
-      .a-submit4{
+      .a-submit-z4{
         background-color: $ma;
       }
-      .a-submit5{
+      .a-submit-z5{
+        background-color: lightgray;
+        border: 1px solid black;
+      }
+      .a-submit-cri1{
         background-color: $cri;
         border: 1px solid #ff9a00;
+        margin-bottom: 5px;
       }
-      .a-submit6{
+      .a-submit-cri2{
+        background-color: $cri;
+        border: 1px solid #ff9a00;
+        margin-bottom: 5px;
+      }
+      .a-submit-cri3{
+        background-color: $cri;
+        border: 1px solid #ff9a00;
+        margin-bottom: 5px;
+      }
+      .a-submit-cri4{
+        background-color: $cri;
+        border: 1px solid #ff9a00;
+        margin-bottom: 5px;
+      }
+      .a-submit-s1{
         background-color: white;
         border: 1px solid black;
         margin-right: 5px;
         margin-bottom:5px;
       }
-      .a-submit7{
+      .a-submit-s2{
         background-color: white;
         border: 1px solid black;
       }
-      .a-submit8{
+      .a-submit-s3{
         background-color: white;
         border: 1px solid black;
         margin-right: 5px;
         margin-bottom:5px;
       }
-      .a-submit9{
+      .a-submit-s4{
         background-color: white;
         border: 1px solid black;
+      }
+      .a-submit-s5{
+        background-color: white;
+        border: 1px solid black;
+        margin-bottom:5px;
+      }
+      .a-submit-d1{
+        background-color: $def;
+        border: 1px solid #00a513;
+        margin-bottom: 5px;
+      }
+      .a-submit-d2{
+        background-color: $def;
+        border: 1px solid #00a513;
+        margin-bottom: 5px;
+      }
+      .a-submit-d3{
+        background-color: $def;
+        border: 1px solid #00a513;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+      .a-submit-d4{
+        background-color: $def;
+        border: 1px solid #00a513;
+        margin-bottom: 5px;
       }
     }
   }

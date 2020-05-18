@@ -379,7 +379,7 @@ $(function() {
     })
   });
   //斬　属性付与を検索-------------------------------
-  $(".a-submit1").on("click", function() {
+  $(".a-submit-z1").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -450,7 +450,7 @@ $(function() {
     })
   });
   //打　属性付与を検索-------------------------------
-  $(".a-submit2").on("click", function() {
+  $(".a-submit-z2").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -521,7 +521,7 @@ $(function() {
     })
   });
   //突属性付与を検索-------------------------------
-  $(".a-submit3").on("click", function() {
+  $(".a-submit-z3").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -592,7 +592,7 @@ $(function() {
     })
   });
   //魔　属性付与を検索-------------------------------
-  $(".a-submit4").on("click", function() {
+  $(".a-submit-z4").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -662,8 +662,80 @@ $(function() {
       console.log('エラー');
     })
   });
+  //何かしらの属性付与を検索-------------------------------
+  $(".a-submit-z5").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("属性付与") != -1){
+              return a3;
+            } else if(b3.indexOf("属性付与") != -1){
+              return b3;
+            } else if(c3.indexOf("属性付与") != -1){
+              return c3;
+            } else if(d3.indexOf("属性付与") != -1){
+              return d3;
+            } else if(e3.indexOf("属性付与") != -1){
+              return e3;
+            } else if(f3.indexOf("属性付与") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("属性付与") != -1){
+              return a3;
+            } else if(b3.indexOf("属性付与") != -1){
+              return b3;
+            } else if(c3.indexOf("属性付与") != -1){
+              return c3;
+            } else if(d3.indexOf("属性付与") != -1){
+              return d3;
+            } else if(e3.indexOf("属性付与") != -1){
+              return e3;
+            } else if(f3.indexOf("属性付与") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+
   //クリティカル系を検索-------------------------------
-  $(".a-submit5").on("click", function() {
+  $(".a-submit-cri1").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -719,6 +791,291 @@ $(function() {
               return e1;
             } else if(f1.indexOf("ｸﾘ") != -1){
               return f1;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //クリティカル発動率20%以上〜
+  $(".a-submit-cri2").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("+2") != -1 || a4.indexOf("+3") != -1){
+              return a3;}
+            } else if(b3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("+2") != -1 || b4.indexOf("+3") != -1){
+              return b3;}
+            } else if(c3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("+2") != -1 || c4.indexOf("+3") != -1){
+              return c3;}
+            } else if(d3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("+2") != -1 || d4.indexOf("+3") != -1){
+              return d3;}
+            } else if(e3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("+2") != -1 || e4.indexOf("+3") != -1){
+              return e3;}
+            } else if(f3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("+2") != -1 || f4.indexOf("+3") != -1){
+              return f3;}
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("+2") != -1 || a4.indexOf("+3") != -1){
+              return a3;}
+            } else if(b3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("+2") != -1 || b4.indexOf("+3") != -1){
+              return b3;}
+            } else if(c3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("+2") != -1 || c4.indexOf("+3") != -1){
+              return c3;}
+            } else if(d3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("+2") != -1 || d4.indexOf("+3") != -1){
+              return d3;}
+            } else if(e3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("+2") != -1 || e4.indexOf("+3") != -1){
+              return e3;}
+            } else if(f3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("+2") != -1 || f4.indexOf("+3") != -1){
+              return f3;}
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //クリティカル発動率30%以上
+  $(".a-submit-cri3").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("+3") != -1){
+              return a3;}
+            } else if(b3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("+3") != -1){
+              return b3;}
+            } else if(c3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("+3") != -1){
+              return c3;}
+            } else if(d3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("+3") != -1){
+              return d3;}
+            } else if(e3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("+3") != -1){
+              return e3;}
+            } else if(f3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("+3") != -1){
+              return f3;}
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("+3") != -1){
+              return a3;}
+            } else if(b3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("+3") != -1){
+              return b3;}
+            } else if(c3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("+3") != -1){
+              return c3;}
+            } else if(d3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("+3") != -1){
+              return d3;}
+            } else if(e3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("+3") != -1){
+              return e3;}
+            } else if(f3.indexOf("クリティカル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("+3") != -1){
+              return f3;}
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //1T目クリティカル確定
+  $(".a-submit-cri4").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("1T目クリティカル") != -1){
+              return a3;
+            } else if(b3.indexOf("1T目クリティカル") != -1){
+              return b3;
+            } else if(c3.indexOf("1T目クリティカル") != -1){
+              return c3;
+            } else if(d3.indexOf("1T目クリティカル") != -1){
+              return d3;
+            } else if(e3.indexOf("1T目クリティカル") != -1){
+              return e3;
+            } else if(f3.indexOf("1T目クリティカル") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("1T目クリティカル") != -1){
+              return a3;
+            } else if(b3.indexOf("1T目クリティカル") != -1){
+              return b3;
+            } else if(c3.indexOf("1T目クリティカル") != -1){
+              return c3;
+            } else if(d3.indexOf("1T目クリティカル") != -1){
+              return d3;
+            } else if(e3.indexOf("1T目クリティカル") != -1){
+              return e3;
+            } else if(f3.indexOf("1T目クリティカル") != -1){
+              return f3;
             }
           })
           filter.forEach(function(flower){
@@ -734,7 +1091,7 @@ $(function() {
     })
   });
   //スキル発動率1.2倍系を検索-------------------------------
-  $(".a-submit6").on("click", function() {
+  $(".a-submit-s1").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -745,24 +1102,42 @@ $(function() {
       if(valGlobal2 == 1){
         valGlobal1 = $.grep(valGlobal1,
           function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
             a4 = elem.a4
             b4 = elem.b4
             c4 = elem.c4
             d4 = elem.d4
             e4 = elem.e4
             f4 = elem.f4
-            if(a4.indexOf("1.2倍") != -1){
-              return a4;
-            } else if(b4.indexOf("1.2倍") != -1){
-              return b4;
-            } else if(c4.indexOf("1.2倍") != -1){
-              return c4;
-            } else if(d4.indexOf("1.2倍") != -1){
-              return d4;
-            } else if(e4.indexOf("1.2倍") != -1){
-              return e4;
-            } else if(f4.indexOf("1.2倍") != -1){
-              return f4;
+            if(a3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("1.2倍") != -1 || a4.indexOf("1.36倍") != -1){
+              return a3;}
+            } else if(b3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("1.2倍") != -1 || b4.indexOf("1.36倍") != -1){
+              return b3;}
+            } else if(c3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("1.2倍") != -1 || c4.indexOf("1.36倍") != -1){
+              return c3;}
+            } else if(d3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("1.2倍") != -1 || d4.indexOf("1.36倍") != -1){
+              return d3;}
+            } else if(e3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("1.2倍") != -1 || e4.indexOf("1.36倍") != -1){
+              return e3;}
+            } else if(f3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("1.2倍") != -1 || f4.indexOf("1.36倍") != -1){
+              return f3;}
             }
           })
           valGlobal1.forEach(function(flower){
@@ -772,24 +1147,42 @@ $(function() {
       }else{
         let filter = $.grep(flowers,
           function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
             a4 = elem.a4
             b4 = elem.b4
             c4 = elem.c4
             d4 = elem.d4
             e4 = elem.e4
             f4 = elem.f4
-            if(a4.indexOf("1.2倍") != -1){
-              return a4;
-            } else if(b4.indexOf("1.2倍") != -1){
-              return b4;
-            } else if(c4.indexOf("1.2倍") != -1){
-              return c4;
-            } else if(d4.indexOf("1.2倍") != -1){
-              return d4;
-            } else if(e4.indexOf("1.2倍") != -1){
-              return e4;
-            } else if(f4.indexOf("1.2倍") != -1){
-              return f4;
+            if(a3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("1.2倍") != -1 || a4.indexOf("1.36倍") != -1){
+              return a3;}
+            } else if(b3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("1.2倍") != -1 || b4.indexOf("1.36倍") != -1){
+              return b3;}
+            } else if(c3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("1.2倍") != -1 || c4.indexOf("1.36倍") != -1){
+              return c3;}
+            } else if(d3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("1.2倍") != -1 || d4.indexOf("1.36倍") != -1){
+              return d3;}
+            } else if(e3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("1.2倍") != -1 || e4.indexOf("1.36倍") != -1){
+              return e3;}
+            } else if(f3.indexOf("スキル発動率") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("1.2倍") != -1 || f4.indexOf("1.36倍") != -1){
+              return f3;}
             }
           })
           filter.forEach(function(flower){
@@ -805,7 +1198,7 @@ $(function() {
     })
   });
   //スキル発動率1.28~1.36倍系を検索-------------------------------
-  $(".a-submit7").on("click", function() {
+  $(".a-submit-s2").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -876,7 +1269,7 @@ $(function() {
     })
   });
   //スキル発動率1T目1.65倍系を検索-------------------------------
-  $(".a-submit8").on("click", function() {
+  $(".a-submit-s3").on("click", function() {
     $.ajax({
       type: 'GET',
       url: '/flowers',
@@ -932,6 +1325,480 @@ $(function() {
               return e4;
             } else if(f4.indexOf("1.65倍") != -1){
               return f4;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //被弾したら2倍------------
+  $(".a-submit-s4").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("被弾スキル発動率") != -1){
+              return a3;
+            } else if(b3.indexOf("被弾スキル発動率") != -1){
+              return b3;
+            } else if(c3.indexOf("被弾スキル発動率") != -1){
+              return c3;
+            } else if(d3.indexOf("被弾スキル発動率") != -1){
+              return d3;
+            } else if(e3.indexOf("被弾スキル発動率") != -1){
+              return e3;
+            } else if(f3.indexOf("被弾スキル発動率") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("被弾スキル発動率") != -1){
+              return a3;
+            } else if(b3.indexOf("被弾スキル発動率") != -1){
+              return b3;
+            } else if(c3.indexOf("被弾スキル発動率") != -1){
+              return c3;
+            } else if(d3.indexOf("被弾スキル発動率") != -1){
+              return d3;
+            } else if(e3.indexOf("被弾スキル発動率") != -1){
+              return e3;
+            } else if(f3.indexOf("被弾スキル発動率") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //1T目自身のスキル確定発動
+  $(".a-submit-s5").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a2.indexOf("自身") != -1 && a3.indexOf("1T目スキル発動率") != -1){
+              return a2;
+            } else if(b2.indexOf("自身") != -1 && b3.indexOf("1T目スキル発動率") != -1){
+              return b2;
+            } else if(c2.indexOf("自身") != -1 && c3.indexOf("1T目スキル発動率") != -1){
+              return c2;
+            } else if(d2.indexOf("自身") != -1 && d3.indexOf("1T目スキル発動率") != -1){
+              return d2;
+            } else if(e2.indexOf("自身") != -1 && e3.indexOf("1T目スキル発動率") != -1){
+              return e2;
+            } else if(f2.indexOf("自身") != -1 && f3.indexOf("1T目スキル発動率") != -1){
+              return f2;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a2.indexOf("自身") != -1 && a3.indexOf("1T目スキル発動率") != -1){
+              return a2;
+            } else if(b2.indexOf("自身") != -1 && b3.indexOf("1T目スキル発動率") != -1){
+              return b2;
+            } else if(c2.indexOf("自身") != -1 && c3.indexOf("1T目スキル発動率") != -1){
+              return c2;
+            } else if(d2.indexOf("自身") != -1 && d3.indexOf("1T目スキル発動率") != -1){
+              return d2;
+            } else if(e2.indexOf("自身") != -1 && e3.indexOf("1T目スキル発動率") != -1){
+              return e2;
+            } else if(f2.indexOf("自身") != -1 && f3.indexOf("1T目スキル発動率") != -1){
+              return f2;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //防御上昇
+  $(".a-submit-d1").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("防御*軽減/根性") != -1){
+              return a3;
+            } else if(b3.indexOf("防御*軽減/根性") != -1){
+              return b3;
+            } else if(c3.indexOf("防御*軽減/根性") != -1){
+              return c3;
+            } else if(d3.indexOf("防御*軽減/根性") != -1){
+              return d3;
+            } else if(e3.indexOf("防御*軽減/根性") != -1){
+              return e3;
+            } else if(f3.indexOf("防御*軽減/根性") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("防御*軽減/根性") != -1){
+              return a3;
+            } else if(b3.indexOf("防御*軽減/根性") != -1){
+              return b3;
+            } else if(c3.indexOf("防御*軽減/根性") != -1){
+              return c3;
+            } else if(d3.indexOf("防御*軽減/根性") != -1){
+              return d3;
+            } else if(e3.indexOf("防御*軽減/根性") != -1){
+              return e3;
+            } else if(f3.indexOf("防御*軽減/根性") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //防御力上昇 30%以上----------------------
+  $(".a-submit-d2").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("*5.3") != -1){
+              return a3;}
+            } else if(b3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("*5.3") != -1){
+              return b3;}
+            } else if(c3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("*5.3") != -1){
+              return c3;}
+            } else if(d3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("*5.3") != -1){
+              return d3;}
+            } else if(e3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("*5.3") != -1){
+              return e3;}
+            } else if(f3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("*5.3") != -1){
+              return f3;}
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a2 = elem.a2
+            b2 = elem.b2
+            c2 = elem.c2
+            d2 = elem.d2
+            e2 = elem.e2
+            f2 = elem.f2
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            a4 = elem.a4
+            b4 = elem.b4
+            c4 = elem.c4
+            d4 = elem.d4
+            e4 = elem.e4
+            f4 = elem.f4
+            if(a3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(a4.indexOf("*5.3") != -1){
+              return a3;}
+            } else if(b3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(b4.indexOf("*5.3") != -1){
+              return b3;}
+            } else if(c3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(c4.indexOf("*5.3") != -1){
+              return c3;}
+            } else if(d3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(d4.indexOf("*5.3") != -1){
+              return d3;}
+            } else if(e3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(e4.indexOf("*5.3") != -1){
+              return e3;}
+            } else if(f3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
+              if(f4.indexOf("*5.3") != -1){
+              return f3;}
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //防御力で反撃----------------
+  $(".a-submit-d3").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("反撃") != -1){
+              return a3;
+            } else if(b3.indexOf("反撃") != -1){
+              return b3;
+            } else if(c3.indexOf("反撃") != -1){
+              return c3;
+            } else if(d3.indexOf("反撃") != -1){
+              return d3;
+            } else if(e3.indexOf("反撃") != -1){
+              return e3;
+            } else if(f3.indexOf("反撃") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("反撃") != -1){
+              return a3;
+            } else if(b3.indexOf("反撃") != -1){
+              return b3;
+            } else if(c3.indexOf("反撃") != -1){
+              return c3;
+            } else if(d3.indexOf("反撃") != -1){
+              return d3;
+            } else if(e3.indexOf("反撃") != -1){
+              return e3;
+            } else if(f3.indexOf("反撃") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //超反撃---------------------------------------
+  $(".a-submit-d4").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("超反撃") != -1){
+              return a3;
+            } else if(b3.indexOf("超反撃") != -1){
+              return b3;
+            } else if(c3.indexOf("超反撃") != -1){
+              return c3;
+            } else if(d3.indexOf("超反撃") != -1){
+              return d3;
+            } else if(e3.indexOf("超反撃") != -1){
+              return e3;
+            } else if(f3.indexOf("超反撃") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("超反撃") != -1){
+              return a3;
+            } else if(b3.indexOf("超反撃") != -1){
+              return b3;
+            } else if(c3.indexOf("超反撃") != -1){
+              return c3;
+            } else if(d3.indexOf("超反撃") != -1){
+              return d3;
+            } else if(e3.indexOf("超反撃") != -1){
+              return e3;
+            } else if(f3.indexOf("超反撃") != -1){
+              return f3;
             }
           })
           filter.forEach(function(flower){
