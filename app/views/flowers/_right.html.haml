@@ -21,72 +21,73 @@
   .right2
     - @flowers.each do |flower|
       = link_to flower_path(flower.id) do
-        .right2_main
-          .right2_main_nation
-            = flower.nation
-          .right2_main_loc
-            = flower.locomotion
-          .right2_main_name
-            = flower.name
-          .right2_main_atr
-            = flower.job
-          .right2_main_skill
-            = flower.skill
-          .ability
-            .ability-box
-              .ability-box_1
-                = flower.a1
-              .ability-box_2
-                = flower.a2
-              .ability-box_3
-                = flower.a3
-              .ability-box_4
-                = flower.a4
-            .ability-box
-              .ability-box_1
-                = flower.b1
-              .ability-box_2
-                = flower.b2
-              .ability-box_3
-                = flower.b3
-              .ability-box_4
-                = flower.b4
-            .ability-box
-              .ability-box_1
-                = flower.c1
-              .ability-box_2
-                = flower.c2
-              .ability-box_3
-                = flower.c3
-              .ability-box_4
-                = flower.c4
-            .ability-box
-              .ability-box_1
-                = flower.d1
-              .ability-box_2
-                = flower.d2
-              .ability-box_3
-                = flower.d3
-              .ability-box_4
-                = flower.d4
-            .ability-box
-              .ability-box_1
-                = flower.e1
-              .ability-box_2
-                = flower.e2
-              .ability-box_3
-                = flower.e3
-              .ability-box_4
-                = flower.e4
-            .ability-box
-              .ability-box_b1
-                = flower.f1
-              .ability-box_b2
-                = flower.f2
-              .ability-box_b3
-                = flower.f3
-              .ability-box_b4
-                = flower.f4
+        - if flower.year == 2015
+          .right2_main
+            .right2_main_nation
+              = flower.nation
+            .right2_main_loc
+              = flower.locomotion
+            .right2_main_name
+              = flower.name
+            .right2_main_atr
+              = flower.job
+            .right2_main_skill
+              = flower.skill
+            .ability
+              .ability-box
+                .ability-box_1
+                  = flower.a1
+                .ability-box_2
+                  = flower.a2
+                .ability-box_3
+                  = flower.a3
+                .ability-box_4
+                  = flower.a4
+              .ability-box
+                .ability-box_1
+                  = flower.b1
+                .ability-box_2
+                  = flower.b2
+                .ability-box_3
+                  = flower.b3
+                .ability-box_4
+                  = flower.b4
+              .ability-box
+                .ability-box_1
+                  = flower.c1
+                .ability-box_2
+                  = flower.c2
+                .ability-box_3
+                  = flower.c3
+                .ability-box_4
+                  = flower.c4
+              .ability-box
+                .ability-box_1
+                  = flower.d1
+                .ability-box_2
+                  = flower.d2
+                .ability-box_3
+                  = flower.d3
+                .ability-box_4
+                  = flower.d4
+              .ability-box
+                .ability-box_1
+                  = flower.e1
+                .ability-box_2
+                  = flower.e2
+                .ability-box_3
+                  = flower.e3
+                .ability-box_4
+                  = flower.e4
+              .ability-box
+                .ability-box_b1
+                  = flower.f1
+                .ability-box_b2
+                  = flower.f2
+                .ability-box_b3
+                  = flower.f3
+                .ability-box_b4
+                  = flower.f4
           -# .ability-box
           -#   .ability-box_1
           -#     = @abilities[flower.ability_ids[1]-1].a1

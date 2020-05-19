@@ -1596,22 +1596,22 @@ $(function() {
             e4 = elem.e4
             f4 = elem.f4
             if(a3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(a4.indexOf("*5.3") != -1){
+              if(a4.indexOf("*5.3") != -1 || a4.indexOf("*6.0") != -1){
               return a3;}
             } else if(b3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(b4.indexOf("*5.3") != -1){
+              if(b4.indexOf("*5.3") != -1 || b4.indexOf("*6.0") != -1){
               return b3;}
             } else if(c3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(c4.indexOf("*5.3") != -1){
+              if(c4.indexOf("*5.3") != -1 || c4.indexOf("*6.0") != -1){
               return c3;}
             } else if(d3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(d4.indexOf("*5.3") != -1){
+              if(d4.indexOf("*5.3") != -1 || d4.indexOf("*6.0") != -1){
               return d3;}
             } else if(e3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(e4.indexOf("*5.3") != -1){
+              if(e4.indexOf("*5.3") != -1 || e4.indexOf("*6.0") != -1){
               return e3;}
             } else if(f3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(f4.indexOf("*5.3") != -1){
+              if(f4.indexOf("*5.3") != -1 || f4.indexOf("*6.0") != -1){
               return f3;}
             }
           })
@@ -1641,22 +1641,22 @@ $(function() {
             e4 = elem.e4
             f4 = elem.f4
             if(a3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(a4.indexOf("*5.3") != -1){
+              if(a4.indexOf("*5.3") != -1 || a4.indexOf("*6.0") != -1){
               return a3;}
             } else if(b3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(b4.indexOf("*5.3") != -1){
+              if(b4.indexOf("*5.3") != -1 || b4.indexOf("*6.0") != -1){
               return b3;}
             } else if(c3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(c4.indexOf("*5.3") != -1){
+              if(c4.indexOf("*5.3") != -1 || c4.indexOf("*6.0") != -1){
               return c3;}
             } else if(d3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(d4.indexOf("*5.3") != -1){
+              if(d4.indexOf("*5.3") != -1 || d4.indexOf("*6.0") != -1){
               return d3;}
             } else if(e3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(e4.indexOf("*5.3") != -1){
+              if(e4.indexOf("*5.3") != -1 || e4.indexOf("*6.0") != -1){
               return e3;}
             } else if(f3.indexOf("防御*軽減/根性") != -1 && a2.indexOf("全員") != -1){
-              if(f4.indexOf("*5.3") != -1){
+              if(f4.indexOf("*5.3") != -1 || f4.indexOf("*6.0") != -1){
               return f3;}
             }
           })
