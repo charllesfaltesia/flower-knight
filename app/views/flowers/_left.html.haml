@@ -5,16 +5,35 @@
   .left_name
     ① キャラ名で検索
     %input#form.form{:placeholder => "ここにキャラ名を入力", :type => "text"}/
+  .left_year
+    ② 年度別
+    %br
+    %input.year2015.yy{:type => "button", :value => " '15 "}
+    %input.year2016.yy{:type => "button", :value => " '16 "}
+    %input.year2017.yy{:type => "button", :value => " '17 "}
+    %input.year2018.yy{:type => "button", :value => " '18 "}
+    %input.year2019.yy{:type => "button", :value => " '19 "}
+    %input.year2020.yy{:type => "button", :value => " '20 "}
+  .left_attack
+    ③ スキルタイプ別検索
+    %br
+    %input.attacktype1.aa{:type => "button", :value => "   全体攻撃   "}
+    %input.attacktype2.aa{:type => "button", :value => " 全体攻撃(倍率変化) "}
+    %br
+    %input.attacktype3.aa{:type => "button", :value => " ２体に攻撃  "}
+    %input.attacktype4.aa{:type => "button", :value => " ３回攻撃  "}
+    %br
+    %input.attacktype5.aa{:type => "button", :value => "   単体攻撃   "}
+    %input.attacktype6.aa{:type => "button", :value => " 単体に吸収攻撃 "}
   .left_atr
-    ② 属性で検索
+    ④ 属性で検索
     .left_atr_check
     %input.submit1{:type => "button", :value => " 斬 "}
     %input.submit2{:type => "button", :value => " 打 "}
     %input.submit3{:type => "button", :value => " 突 "}
     %input.submit4{:type => "button", :value => " 魔 "}
-  .left_atr_check
   .left_ability
-    ③ アビリティ検索
+    ⑤ アビリティ検索
     %br
     ・属性付与
     .left_ability_box
@@ -25,6 +44,8 @@
       %input.a-submit-z4{:type => "button", :value => " 魔付与 "}>/
       %br
       %input.a-submit-z5{:type => "button", :value => " 属性付与 "}>/
+      %input.a-submit-z6{:type => "button", :value => " 2属性 "}>/
+      %input.a-submit-z7{:type => "button", :value => " 3属性 "}>/
     .left_ability_box
       ・クリティカル系
       %br
@@ -60,10 +81,14 @@
       %input.a-submit-solar1{:type => "button", :value => " ソーラー威力上昇 "}>/
       %br
       %input.a-submit-solar2{:type => "button", :value => " 光ゲージ初期値増加 "}>/
-      
-
-
-
+    .left_ability_box
+      ・敵弱体化/デバフ系
+      %br
+      %input.a-submit-debuff1{:type => "button", :value => " 敵の攻撃力低下 "}>/
+      %br
+      %input.a-submit-debuff2{:type => "button", :value => " 敵のスキル発動率低下 "}>/
+      %br
+      %input.a-submit-debuff3{:type => "button", :value => " 敵が攻撃をミスする "}>/
 
     -# %select.sele
     -#   %option{:value => "0"} 指定なし

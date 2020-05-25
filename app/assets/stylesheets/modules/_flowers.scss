@@ -62,7 +62,7 @@ a{
     }
   }
   &_name{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     .form{
       display: block;
       width :238px;
@@ -71,8 +71,23 @@ a{
       padding-left: 5px;
     }
   }
+  &_year{
+    .yy{
+      background-color: lightgray;
+      font-size: 12px;
+      margin-bottom: 5px;
+      border: 1px solid gray;
+    }
+  }
+  &_attack{
+    .aa{
+      font-size: 14px;
+      background-color: white;
+      border: 1px solid lightgray;
+    }
+  }
   &_atr{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     .submit1{
       background-color: $zan;
       color: white;
@@ -112,6 +127,20 @@ a{
       .a-submit-z5{
         background-color: lightgray;
         border: 1px solid black;
+        font-size: 14px;
+        margin-bottom:5px;
+        margin-right :5px;
+      }
+      .a-submit-z6{
+        background-color: lightgray;
+        margin-bottom:5px;
+        margin-right :5px;
+        font-size: 14px;
+        border: 1px solid gray;
+      }
+      .a-submit-z7{
+        border: 1px solid gray;
+        background: linear-gradient(to right,$zan,$da,$totsu,$ma);
       }
       .a-submit-cri1{
         background-color: $cri;
@@ -187,6 +216,21 @@ a{
       .a-submit-solar2{
         background-color: #feffa9;
         border: 1px solid #e4e640;
+      }
+      .a-submit-debuff1{
+        background-color: #6861a2;
+        margin-bottom: 5px;
+        color: white;
+      }
+      .a-submit-debuff2{
+        background-color: #6861a2;
+        margin-bottom: 5px;
+        color: white;
+      }
+      .a-submit-debuff3{
+        background-color: #6861a2;
+        margin-bottom: 5px;
+        color: white;
       }
     }
   }
