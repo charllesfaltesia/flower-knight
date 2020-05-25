@@ -231,6 +231,433 @@ $(function() {
       console.log('エラー');
     })
   });
+  //2015年検索-------------------------------
+  $(".year2015").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            return (elem.year == 2015);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            return (elem.year == 2015);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //2016年検索-------------------------------
+  $(".year2016").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            return (elem.year == 2016);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            return (elem.year == 2016);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //2017年検索-------------------------------
+  $(".year2017").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            return (elem.year == 2017);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            return (elem.year == 2017);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //2018年検索-------------------------------
+  $(".year2018").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            return (elem.year == 2018);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            return (elem.year == 2018);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //2019年検索-------------------------------
+  $(".year2019").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            return (elem.year == 2019);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            return (elem.year == 2019);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //2020年検索-------------------------------
+  $(".year2020").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            return (elem.year == 2020);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            return (elem.year == 2020);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //スキルタイプ別で検索-------------------------------
+  $(".attacktype1").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("全体") != -1);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("全体") != -1);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  $(".attacktype2").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("全体変則") != -1);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("全体変則") != -1);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  $(".attacktype3").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("2体") != -1);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("2体") != -1);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  $(".attacktype4").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("3回") != -1);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("3回") != -1);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  $(".attacktype5").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("単体") != -1);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("単体") != -1);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  $(".attacktype6").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("単吸収") != -1);
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filtered = $.grep(flowers,
+          function(elem, index){
+            str = elem.skill
+            return (str.indexOf("単吸収") != -1);
+          })
+          filtered.forEach(function(flower){
+            appendFlower(flower);
+          })
+          valGlobal1 = filtered;
+          valGlobal2 = 1;
+          appendColor();
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
   //斬属性を検索-------------------------------
   $(".submit1").on("click", function() {
     $.ajax({
@@ -734,7 +1161,147 @@ $(function() {
       console.log('エラー');
     })
   });
-
+  //複数属性付与
+  $(".a-submit-z6").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("2属性付与") != -1 || a3.indexOf("3属性付与") != -1){
+              return a3;
+            } else if(b3.indexOf("2属性付与") != -1 || b3.indexOf("3属性付与") != -1){
+              return b3;
+            } else if(c3.indexOf("2属性付与") != -1 || c3.indexOf("3属性付与") != -1){
+              return c3;
+            } else if(d3.indexOf("2属性付与") != -1 || d3.indexOf("3属性付与") != -1){
+              return d3;
+            } else if(e3.indexOf("2属性付与") != -1 || e3.indexOf("3属性付与") != -1){
+              return e3;
+            } else if(f3.indexOf("2属性付与") != -1 || f3.indexOf("3属性付与") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("2属性付与") != -1 || a3.indexOf("3属性付与") != -1){
+              return a3;
+            } else if(b3.indexOf("2属性付与") != -1 || b3.indexOf("3属性付与") != -1){
+              return b3;
+            } else if(c3.indexOf("2属性付与") != -1 || c3.indexOf("3属性付与") != -1){
+              return c3;
+            } else if(d3.indexOf("2属性付与") != -1 || d3.indexOf("3属性付与") != -1){
+              return d3;
+            } else if(e3.indexOf("2属性付与") != -1 || e3.indexOf("3属性付与") != -1){
+              return e3;
+            } else if(f3.indexOf("2属性付与") != -1 || f3.indexOf("3属性付与") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  $(".a-submit-z7").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("3属性付与") != -1){
+              return a3;
+            } else if(b3.indexOf("3属性付与") != -1){
+              return b3;
+            } else if(c3.indexOf("3属性付与") != -1){
+              return c3;
+            } else if(d3.indexOf("3属性付与") != -1){
+              return d3;
+            } else if(e3.indexOf("3属性付与") != -1){
+              return e3;
+            } else if(f3.indexOf("3属性付与") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("3属性付与") != -1){
+              return a3;
+            } else if(b3.indexOf("3属性付与") != -1){
+              return b3;
+            } else if(c3.indexOf("3属性付与") != -1){
+              return c3;
+            } else if(d3.indexOf("3属性付与") != -1){
+              return d3;
+            } else if(e3.indexOf("3属性付与") != -1){
+              return e3;
+            } else if(f3.indexOf("3属性付与") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
   //クリティカル系を検索-------------------------------
   $(".a-submit-cri1").on("click", function() {
     $.ajax({
@@ -1941,6 +2508,219 @@ $(function() {
             } else if(e3.indexOf("光GAUGE 初期値") != -1){
               return e3;
             } else if(f3.indexOf("光GAUGE 初期値") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //敵の攻撃力低下---------------------------------------
+  $(".a-submit-debuff1").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("敵の攻撃力低下") != -1){
+              return a3;
+            } else if(b3.indexOf("敵の攻撃力低下") != -1){
+              return b3;
+            } else if(c3.indexOf("敵の攻撃力低下") != -1){
+              return c3;
+            } else if(d3.indexOf("敵の攻撃力低下") != -1){
+              return d3;
+            } else if(e3.indexOf("敵の攻撃力低下") != -1){
+              return e3;
+            } else if(f3.indexOf("敵の攻撃力低下") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("敵の攻撃力低下") != -1){
+              return a3;
+            } else if(b3.indexOf("敵の攻撃力低下") != -1){
+              return b3;
+            } else if(c3.indexOf("敵の攻撃力低下") != -1){
+              return c3;
+            } else if(d3.indexOf("敵の攻撃力低下") != -1){
+              return d3;
+            } else if(e3.indexOf("敵の攻撃力低下") != -1){
+              return e3;
+            } else if(f3.indexOf("敵の攻撃力低下") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //敵のスキル発動率低下---------------------------------------
+  $(".a-submit-debuff2").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("敵のスキル発動率") != -1){
+              return a3;
+            } else if(b3.indexOf("敵のスキル発動率") != -1){
+              return b3;
+            } else if(c3.indexOf("敵のスキル発動率") != -1){
+              return c3;
+            } else if(d3.indexOf("敵のスキル発動率") != -1){
+              return d3;
+            } else if(e3.indexOf("敵のスキル発動率") != -1){
+              return e3;
+            } else if(f3.indexOf("敵のスキル発動率") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("敵のスキル発動率") != -1){
+              return a3;
+            } else if(b3.indexOf("敵のスキル発動率") != -1){
+              return b3;
+            } else if(c3.indexOf("敵のスキル発動率") != -1){
+              return c3;
+            } else if(d3.indexOf("敵のスキル発動率") != -1){
+              return d3;
+            } else if(e3.indexOf("敵のスキル発動率") != -1){
+              return e3;
+            } else if(f3.indexOf("敵のスキル発動率") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
+  //敵がミスする---------------------------------------
+  $(".a-submit-debuff3").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("敵が攻撃をミス") != -1){
+              return a3;
+            } else if(b3.indexOf("敵が攻撃をミス") != -1){
+              return b3;
+            } else if(c3.indexOf("敵が攻撃をミス") != -1){
+              return c3;
+            } else if(d3.indexOf("敵が攻撃をミス") != -1){
+              return d3;
+            } else if(e3.indexOf("敵が攻撃をミス") != -1){
+              return e3;
+            } else if(f3.indexOf("敵が攻撃をミス") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("敵が攻撃をミス") != -1){
+              return a3;
+            } else if(b3.indexOf("敵が攻撃をミス") != -1){
+              return b3;
+            } else if(c3.indexOf("敵が攻撃をミス") != -1){
+              return c3;
+            } else if(d3.indexOf("敵が攻撃をミス") != -1){
+              return d3;
+            } else if(e3.indexOf("敵が攻撃をミス") != -1){
+              return e3;
+            } else if(f3.indexOf("敵が攻撃をミス") != -1){
               return f3;
             }
           })
