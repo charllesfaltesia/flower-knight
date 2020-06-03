@@ -2381,6 +2381,77 @@ $(function() {
       console.log('エラー');
     })
   });
+  //超反撃---------------------------------------
+  $(".a-submit-d5").on("click", function() {
+    $.ajax({
+      type: 'GET',
+      url: '/flowers',
+      dataType: 'json'
+    })
+    .done(function(flowers){
+      search_list.empty();
+      if(valGlobal2 == 1){
+        valGlobal1 = $.grep(valGlobal1,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("ダメージを無効化") != -1){
+              return a3;
+            } else if(b3.indexOf("ダメージを無効化") != -1){
+              return b3;
+            } else if(c3.indexOf("ダメージを無効化") != -1){
+              return c3;
+            } else if(d3.indexOf("ダメージを無効化") != -1){
+              return d3;
+            } else if(e3.indexOf("ダメージを無効化") != -1){
+              return e3;
+            } else if(f3.indexOf("ダメージを無効化") != -1){
+              return f3;
+            }
+          })
+          valGlobal1.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+      }else{
+        let filter = $.grep(flowers,
+          function(elem, index){
+            a3 = elem.a3
+            b3 = elem.b3
+            c3 = elem.c3
+            d3 = elem.d3
+            e3 = elem.e3
+            f3 = elem.f3
+            if(a3.indexOf("ダメージを無効化") != -1){
+              return a3;
+            } else if(b3.indexOf("ダメージを無効化") != -1){
+              return b3;
+            } else if(c3.indexOf("ダメージを無効化") != -1){
+              return c3;
+            } else if(d3.indexOf("ダメージを無効化") != -1){
+              return d3;
+            } else if(e3.indexOf("ダメージを無効化") != -1){
+              return e3;
+            } else if(f3.indexOf("ダメージを無効化") != -1){
+              return f3;
+            }
+          })
+          filter.forEach(function(flower){
+            appendFlower(flower);
+          })
+          appendColor();
+          valGlobal1 = filter;
+          valGlobal2 = 1;
+      }
+    })
+    .fail(function(){
+      console.log('エラー');
+    })
+  });
   //ソーラードライブ威力---------------------------------------
   $(".a-submit-solar1").on("click", function() {
     $.ajax({
